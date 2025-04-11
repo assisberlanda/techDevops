@@ -1,4 +1,3 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
 interface ProfilePhotoProps {
@@ -25,15 +24,27 @@ export function ProfilePhoto({ src, alt, size = "lg", className }: ProfilePhotoP
   
   return (
     <div className={cn("relative", className)}>
-      <Avatar className={cn(
-        "border-4 border-primary shadow-xl", 
+      <div className={cn(
+        "border-4 border-primary rounded-full shadow-xl overflow-hidden relative flex items-center justify-center bg-muted",
         sizeClasses[size]
       )}>
-        <AvatarImage src={src} alt={alt} />
-        <AvatarFallback className="text-3xl">{initials}</AvatarFallback>
-      </Avatar>
-      <div className="absolute inset-0 bg-primary/20 dark:bg-primary/40 rounded-full"></div>
-      <div className="absolute -bottom-1 left-0 right-0 h-20 bg-gradient-to-t from-primary/30 to-transparent rounded-b-full"></div>
+        <img 
+          src={src} 
+          alt={alt} 
+          className="h-full w-full object-cover"
+          onError={(e) => {
+            // Exibe iniciais se a imagem falhar ao carregar
+            e.currentTarget.style.display = 'none';
+            e.currentTarget.parentElement!.setAttribute('data-initials', initials);
+            e.currentTarget.parentElement!.classList.add('flex', 'items-center', 'justify-center');
+          }}
+        />
+        <div className="absolute inset-0 flex items-center justify-center text-3xl font-semibold opacity-0 data-[initials]:opacity-100">
+          {initials}
+        </div>
+      </div>
+      <div className="absolute inset-0 bg-primary/20 dark:bg-primary/40 rounded-full pointer-events-none"></div>
+      <div className="absolute -bottom-1 left-0 right-0 h-20 bg-gradient-to-t from-primary/30 to-transparent rounded-b-full pointer-events-none"></div>
     </div>
   );
 }

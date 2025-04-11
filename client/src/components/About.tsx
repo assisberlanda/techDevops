@@ -71,14 +71,86 @@ export function About() {
             </div>
           </motion.div>
           
-          {/* Áreas de Interesse - Substitui a antiga seção de certificações */}
           <motion.div 
-            className="lg:w-5/12"
+            className="lg:w-5/12 space-y-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
+            {/* Perfil comportamental */}
+            <Card>
+              <CardHeader className="border-b">
+                <CardTitle className="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary mr-2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 16v-4"></path>
+                    <path d="M12 8h.01"></path>
+                  </svg>
+                  Perfil Comportamental
+                </CardTitle>
+              </CardHeader>
+              
+              <CardContent className="pt-6">
+                <div className="space-y-6">
+                  <div className="flex flex-col md:flex-row gap-4 items-start">
+                    <div className="bg-primary/10 p-4 rounded-md text-primary flex-shrink-0 w-24 h-24 flex items-center justify-center">
+                      {/* Gráfico simplificado Mindsight */}
+                      <svg width="80" height="80" viewBox="0 0 80 80">
+                        <circle cx="40" cy="40" r="38" fill="none" stroke="currentColor" strokeWidth="2" strokeOpacity="0.3" />
+                        <path d="M40 2 A38 38 0 0 1 70 40" stroke="currentColor" strokeWidth="4" fill="none" />
+                        <path d="M40 2 A38 38 0 0 1 10 40" stroke="currentColor" strokeWidth="4" fill="none" />
+                        <circle cx="40" cy="40" r="4" fill="currentColor" />
+                      </svg>
+                    </div>
+                    <div className="flex-grow">
+                      <h4 className="text-lg font-medium mb-1">Análise Mindsight</h4>
+                      <p className="text-sm text-muted-foreground mb-2">Avaliação de competências e perfil de gestão</p>
+                      <a 
+                        href="https://app.mindsight.com.br/devolutiva/19136343/devolutiva_gestor/?code=0c5e93b6-967a-404d-b243-9d32152451a5"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-primary hover:underline"
+                      >
+                        Ver resultados completos
+                        <svg className="ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col md:flex-row gap-4 items-start">
+                    <div className="bg-primary/10 p-4 rounded-md text-primary flex-shrink-0 w-24 h-24 flex items-center justify-center">
+                      {/* Gráfico simplificado Gupy */}
+                      <svg width="80" height="80" viewBox="0 0 80 80">
+                        <rect x="10" y="50" width="12" height="25" fill="currentColor" fillOpacity="0.7" />
+                        <rect x="25" y="30" width="12" height="45" fill="currentColor" fillOpacity="0.8" />
+                        <rect x="40" y="20" width="12" height="55" fill="currentColor" fillOpacity="0.9" />
+                        <rect x="55" y="35" width="12" height="40" fill="currentColor" fillOpacity="0.7" />
+                      </svg>
+                    </div>
+                    <div className="flex-grow">
+                      <h4 className="text-lg font-medium mb-1">Mapeamento Gupy</h4>
+                      <p className="text-sm text-muted-foreground mb-2">Análise de perfil comportamental e competências</p>
+                      <a 
+                        href="https://assessments.gupy.io/behavioral/60a52f0f01664007a3277401634f9e9c/results/recruiter?utm_campaign=behavioral&utm_medium=shared&utm_source=mapping"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-primary hover:underline"
+                      >
+                        Ver resultados completos
+                        <svg className="ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            {/* Áreas de Interesse */}
             <Card>
               <CardHeader className="border-b">
                 <CardTitle className="flex items-center">
