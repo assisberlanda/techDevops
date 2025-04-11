@@ -38,7 +38,7 @@ export function Contact() {
   return (
     <section id="contact" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
-        <SectionHeading number="4" title="Contato" />
+        <SectionHeading number="4" title={t("contact.title")} />
         
         <motion.p 
           className="text-lg text-center max-w-2xl mx-auto mb-12"
@@ -60,7 +60,7 @@ export function Contact() {
           >
             <Card className="h-full">
               <CardHeader className="text-center">
-                <CardTitle>Informações de Contato</CardTitle>
+                <CardTitle>{t("contact.info")}</CardTitle>
               </CardHeader>
               
               <CardContent>
@@ -119,7 +119,7 @@ export function Contact() {
                       <MapPin className="h-5 w-5" />
                     </div>
                     <div>
-                      <h4 className="font-medium mb-1">Localização</h4>
+                      <h4 className="font-medium mb-1">{t("contact.location")}</h4>
                       <p>{content.location}</p>
                       <p className="text-sm text-muted-foreground mt-1">{content.relocate}</p>
                     </div>
@@ -129,21 +129,13 @@ export function Contact() {
                 <div className="mt-8 pt-8 border-t flex justify-center">
                   <div className="flex flex-wrap gap-4">
                     <a 
-                      href="/CV- DevOps.pdf" 
-                      target="_blank"
-                      className="inline-flex items-center px-4 py-2 bg-primary/10 hover:bg-primary/20 text-foreground rounded-md transition-colors"
-                    >
-                      <FileText className="mr-2 h-4 w-4" />
-                      Download CV
-                    </a>
-                    <a 
                       href={content.dioProfile} 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="inline-flex items-center px-4 py-2 bg-primary/10 hover:bg-primary/20 text-foreground rounded-md transition-colors"
                     >
                       <Award className="mr-2 h-4 w-4" />
-                      Perfil DIO
+                      {t("contact.dioProfile")}
                     </a>
                   </div>
                 </div>

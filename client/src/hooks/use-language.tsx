@@ -69,13 +69,13 @@ const translationMap: Record<Language, Record<string, string>> = {
     // Contact
     "contact.title": "Contato",
     "contact.description": "Estou aberto a oportunidades de trabalho em DevOps e desenvolvimento de software. Se você tem um projeto interessante ou uma oportunidade que combina com minhas habilidades, entre em contato comigo diretamente por e-mail.",
-    "contact.info.title": "Informações de Contato",
+    "contact.info": "Informações de Contato",
     "contact.email": "Email",
     "contact.linkedin": "LinkedIn",
     "contact.github": "GitHub", 
     "contact.location": "Localização",
-    "contact.cv": "Baixar meu CV",
-    "contact.dio": "Perfil DIO"
+    "contact.downloadCV": "Download CV",
+    "contact.dioProfile": "Perfil DIO"
   },
   "en-US": {
     // Hero
@@ -124,13 +124,13 @@ const translationMap: Record<Language, Record<string, string>> = {
     // Contact
     "contact.title": "Contact",
     "contact.description": "I'm open to DevOps and software development job opportunities. If you have an interesting project or an opportunity that matches my skills, please contact me directly via email.",
-    "contact.info.title": "Contact Information",
+    "contact.info": "Contact Information",
     "contact.email": "Email",
     "contact.linkedin": "LinkedIn",
     "contact.github": "GitHub", 
     "contact.location": "Location",
-    "contact.cv": "Download my CV",
-    "contact.dio": "DIO Profile"
+    "contact.downloadCV": "Download CV",
+    "contact.dioProfile": "DIO Profile"
   }
 };
 
