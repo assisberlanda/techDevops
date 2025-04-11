@@ -7,11 +7,11 @@ import {
   Github, 
   MapPin, 
   Award, 
-  FileText, 
   Loader2 
 } from "lucide-react";
 import { useContactContent } from "@/hooks/usePortfolioContent";
 import { useLanguage } from "@/hooks/use-language";
+import { DownloadCVButton } from "@/components/DownloadCVButton";
 
 export function Contact() {
   const { data: contactContent, isLoading } = useContactContent();
@@ -34,9 +34,6 @@ export function Contact() {
   }
   
   const content = contactContent.content;
-  
-  // Determine CV path based on language
-  const cvPath = language === "pt-BR" ? "/CV- DevOps.pdf" : "/CV-Intership_TI.pdf";
   
   return (
     <section id="contact" className="py-20 bg-muted/30">
@@ -131,14 +128,7 @@ export function Contact() {
                 
                 <div className="mt-8 pt-8 border-t flex justify-center">
                   <div className="flex flex-wrap gap-4">
-                    <a 
-                      href={cvPath}
-                      target="_blank"
-                      className="inline-flex items-center px-4 py-2 bg-primary/10 hover:bg-primary/20 text-foreground rounded-md transition-colors"
-                    >
-                      <FileText className="mr-2 h-4 w-4" />
-                      {t("contact.downloadCV")}
-                    </a>
+                    <DownloadCVButton />
                     <a 
                       href={content.dioProfile} 
                       target="_blank" 
