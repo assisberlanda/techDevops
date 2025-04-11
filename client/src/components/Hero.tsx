@@ -3,9 +3,11 @@ import { ArrowDownCircle, FileText, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProfilePhoto } from "@/components/ui/profile-photo";
 import { useHeroContent } from "@/hooks/usePortfolioContent";
+import { useLanguage } from "@/hooks/use-language";
 
 export function Hero() {
   const { data: heroContent, isLoading } = useHeroContent();
+  const { t, language } = useLanguage();
   
   if (isLoading) {
     return (
@@ -59,7 +61,7 @@ export function Hero() {
             animate="show"
           >
             <motion.p variants={item} className="text-primary font-mono mb-3">
-              Olá, meu nome é
+              {language === "pt-BR" ? "Olá, meu nome é" : "Hi, my name is"}
             </motion.p>
             
             <motion.h1 variants={item} className="text-4xl md:text-5xl xl:text-6xl font-bold mb-4">
@@ -70,14 +72,14 @@ export function Hero() {
               variants={item} 
               className="text-2xl md:text-3xl text-muted-foreground font-medium mb-6"
             >
-              {content.subtitle}
+              {t("hero.subtitle")}
             </motion.h2>
             
             <motion.p 
               variants={item}
               className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0"
             >
-              {content.description}
+              {t("hero.description")}
             </motion.p>
             
             <motion.div 
@@ -86,13 +88,13 @@ export function Hero() {
             >
               <a href="#contact">
                 <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                  Entre em contato
+                  {language === "pt-BR" ? "Entre em contato" : "Contact me"}
                 </Button>
               </a>
               <a href={content.cvUrl} target="_blank" rel="noopener noreferrer">
                 <Button>
                   <FileText className="mr-2 h-4 w-4" />
-                  Download CV
+                  {language === "pt-BR" ? "Baixe meus dados em formato PDF formatado" : "Download my data in formatted PDF"}
                 </Button>
               </a>
             </motion.div>
