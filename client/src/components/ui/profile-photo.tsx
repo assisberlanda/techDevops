@@ -25,7 +25,7 @@ export function ProfilePhoto({ src, alt, size = "lg", className }: ProfilePhotoP
   return (
     <div className={cn("relative", className)}>
       <div className={cn(
-        "border-4 border-primary rounded-full shadow-xl overflow-hidden",
+        "rounded-full shadow-xl overflow-hidden",
         sizeClasses[size]
       )}>
         <img 

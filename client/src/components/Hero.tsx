@@ -68,12 +68,15 @@ export function Hero() {
               {content.title}
             </motion.h1>
             
-            <motion.h2 
-              variants={item} 
-              className="text-2xl md:text-3xl text-muted-foreground font-medium mb-6"
+            <motion.div
+              variants={item}
+              className="flex items-center justify-center lg:justify-start gap-3 mb-6"
             >
-              {t("hero.subtitle")}
-            </motion.h2>
+              <h2 className="text-2xl md:text-3xl text-muted-foreground font-medium">
+                {t("hero.subtitle")}
+              </h2>
+              <img src="/devops.png" alt="DevOps" className="h-8 md:h-10" />
+            </motion.div>
             
             <motion.p 
               variants={item}
@@ -82,16 +85,7 @@ export function Hero() {
               {t("hero.description")}
             </motion.p>
             
-            <motion.div 
-              variants={item}
-              className="flex flex-wrap justify-center lg:justify-start gap-4"
-            >
-              <a href="#contact">
-                <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                  {language === "pt-BR" ? "Entre em contato" : "Contact me"}
-                </Button>
-              </a>
-            </motion.div>
+
             
             <motion.div 
               variants={item}
@@ -120,7 +114,7 @@ export function Hero() {
                 </svg>
               </a>
               <a 
-                href="mailto:berlanda.medeiros@gmail.com"
+                href="#contact"
                 className="text-2xl hover:text-primary transition-colors"
                 aria-label="Email"
               >
