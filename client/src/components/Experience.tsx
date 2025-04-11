@@ -25,7 +25,7 @@ export function Experience() {
   return (
     <section id="experience" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
-        <SectionHeading number="03" title="Experiência Profissional" />
+        <SectionHeading number="2" title="Experiências Profissionais" />
         
         <div className="max-w-3xl mx-auto">
           <div className="relative space-y-12 ml-8">

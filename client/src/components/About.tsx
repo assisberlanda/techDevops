@@ -35,7 +35,7 @@ export function About() {
   return (
     <section id="about" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
-        <SectionHeading number="01" title={content.title} />
+        <SectionHeading number="1" title="Sobre Mim" />
         
         <div className="flex flex-col lg:flex-row gap-12">
           <motion.div 
