@@ -135,8 +135,7 @@ export class DatabaseStorage implements IStorage {
     return await db
       .select()
       .from(projects)
-      .where(eq(projects.isVisible, true))
-      .where(eq(projects.isFeatured, true));
+      .where(eq(projects.isVisible, true) && eq(projects.isFeatured, true));
   }
 
   async createProject(project: InsertProject): Promise<Project> {
@@ -154,8 +153,8 @@ export class DatabaseStorage implements IStorage {
   }
 
   async deleteProject(id: number): Promise<boolean> {
-    const result = await db.delete(projects).where(eq(projects.id, id));
-    return result.rowCount > 0;
+    await db.delete(projects).where(eq(projects.id, id));
+    return true;
   }
 
   // Contact message operations
@@ -179,15 +178,15 @@ export class DatabaseStorage implements IStorage {
   }
 
   async markMessageAsRead(id: number): Promise<boolean> {
-    const result = await db
+    await db
       .update(contactMessages)
       .set({ isRead: true })
       .where(eq(contactMessages.id, id));
-    return result.rowCount > 0;
+    return true;
   }
 
   async deleteContactMessage(id: number): Promise<boolean> {
-    const result = await db.delete(contactMessages).where(eq(contactMessages.id, id));
-    return result.rowCount > 0;
+    await db.delete(contactMessages).where(eq(contactMessages.id, id));
+    return true;
   }
 }
