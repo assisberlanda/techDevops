@@ -21,7 +21,7 @@ const octokit = new Octokit({
 // Multer setup for file uploads
 const storage_config = multer.diskStorage({
   destination: function (_, file, cb) {
-    const uploadPath = path.join(process.cwd(), "dist", "public", "uploads");
+    const uploadPath = path.join(process.cwd(), "public", "uploaded-files");
     
     // Create directory if it doesn't exist
     if (!fs.existsSync(uploadPath)) {

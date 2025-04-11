@@ -47,8 +47,8 @@ export function Navbar() {
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <Link href="/">
-            <a className="text-2xl font-bold text-primary dark:text-primary font-mono">
-              &lt;assis.dev/&gt;
+            <a className="text-2xl font-bold text-primary dark:text-primary font-mono flex items-center gap-2">
+              <span>🔄</span> <span>DevOps.assis</span>
             </a>
           </Link>
           
