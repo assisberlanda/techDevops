@@ -25,7 +25,7 @@ export function ProfilePhoto({ src, alt, size = "lg", className }: ProfilePhotoP
   return (
     <div className={cn("relative", className)}>
       <div className={cn(
-        "border-4 border-primary rounded-full shadow-xl overflow-hidden relative flex items-center justify-center bg-muted",
+        "border-4 border-primary rounded-full shadow-xl overflow-hidden",
         sizeClasses[size]
       )}>
         <img 
@@ -39,9 +39,6 @@ export function ProfilePhoto({ src, alt, size = "lg", className }: ProfilePhotoP
             e.currentTarget.parentElement!.classList.add('flex', 'items-center', 'justify-center');
           }}
         />
-        <div className="absolute inset-0 flex items-center justify-center text-3xl font-semibold opacity-0 data-[initials]:opacity-100">
-          {initials}
-        </div>
       </div>
     </div>
   );

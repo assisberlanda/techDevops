@@ -10,9 +10,11 @@ import {
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { useAboutContent } from "@/hooks/usePortfolioContent";
+import { useLanguage } from "@/hooks/use-language";
 
 export function About() {
   const { data: aboutContent, isLoading } = useAboutContent();
+  const { language, t } = useLanguage();
   
   if (isLoading) {
     return (
@@ -35,7 +37,7 @@ export function About() {
   return (
     <section id="about" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
-        <SectionHeading number="1" title="Sobre Mim" />
+        <SectionHeading number="1" title={t("about.title")} />
         
         <div className="flex flex-col lg:flex-row gap-12">
           <motion.div 
@@ -87,7 +89,7 @@ export function About() {
                     <path d="M12 16v-4"></path>
                     <path d="M12 8h.01"></path>
                   </svg>
-                  Perfil Comportamental
+                  {t("about.profile.title")}
                 </CardTitle>
               </CardHeader>
               

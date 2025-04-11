@@ -91,12 +91,6 @@ export function Hero() {
                   {language === "pt-BR" ? "Entre em contato" : "Contact me"}
                 </Button>
               </a>
-              <a href={content.cvUrl} target="_blank" rel="noopener noreferrer">
-                <Button>
-                  <FileText className="mr-2 h-4 w-4" />
-                  {language === "pt-BR" ? "Baixe meus dados em formato PDF formatado" : "Download my data in formatted PDF"}
-                </Button>
-              </a>
             </motion.div>
             
             <motion.div 
