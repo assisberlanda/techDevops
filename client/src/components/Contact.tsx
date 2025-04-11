@@ -11,9 +11,11 @@ import {
   Loader2 
 } from "lucide-react";
 import { useContactContent } from "@/hooks/usePortfolioContent";
+import { useLanguage } from "@/hooks/use-language";
 
 export function Contact() {
   const { data: contactContent, isLoading } = useContactContent();
+  const { t } = useLanguage();
   
   if (isLoading) {
     return (

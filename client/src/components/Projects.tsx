@@ -5,10 +5,12 @@ import { ProjectCard } from "@/components/ui/project-card";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/hooks/use-language";
 
 export function Projects() {
   const { data: projects, isLoading: isLoadingProjects } = useProjects();
   const { data: githubRepos } = useGithubRepos();
+  const { t } = useLanguage();
   
   if (isLoadingProjects) {
     return (
@@ -29,7 +31,7 @@ export function Projects() {
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto px-6">
-        <SectionHeading number="3" title="Projetos" />
+        <SectionHeading number="3" title={t("projects.title")} />
         
         <motion.div 
           className="text-center mb-10"
@@ -39,8 +41,7 @@ export function Projects() {
           viewport={{ once: true }}
         >
           <p className="text-lg max-w-3xl mx-auto">
-            Aqui estão alguns dos meus projetos recentes. Esses projetos demonstram minhas habilidades
-            em DevOps, automação e desenvolvimento de software.
+            {t("projects.description")}
           </p>
         </motion.div>
         
@@ -65,7 +66,7 @@ export function Projects() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-bold mb-8 text-center">Projetos do GitHub</h3>
+            <h3 className="text-xl font-bold mb-8 text-center">{t("projects.github.title")}</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {githubRepos.slice(0, 3).map((repo) => (
@@ -88,7 +89,7 @@ export function Projects() {
             rel="noopener noreferrer"
           >
             <Button variant="ghost" className="text-primary">
-              Ver mais projetos no GitHub <span className="ml-2">→</span>
+              {t("projects.more")} <span className="ml-2">→</span>
             </Button>
           </a>
         </div>
