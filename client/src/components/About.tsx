@@ -106,15 +106,15 @@ export function About() {
                       </svg>
                     </div>
                     <div className="flex-grow">
-                      <h4 className="text-lg font-medium mb-1">Análise Mindsight</h4>
-                      <p className="text-sm text-muted-foreground mb-2">Avaliação de competências e perfil de gestão</p>
+                      <h4 className="text-lg font-medium mb-1">{t("about.profile.mindsight")}</h4>
+                      <p className="text-sm text-muted-foreground mb-2">{t("about.profile.mindsight.desc")}</p>
                       <a 
                         href="https://app.mindsight.com.br/devolutiva/19136343/devolutiva_gestor/?code=0c5e93b6-967a-404d-b243-9d32152451a5"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-primary hover:underline"
                       >
-                        Ver resultados completos
+                        {t("about.profile.mindsight.btn")}
                         <svg className="ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
@@ -133,15 +133,15 @@ export function About() {
                       </svg>
                     </div>
                     <div className="flex-grow">
-                      <h4 className="text-lg font-medium mb-1">Mapeamento Gupy</h4>
-                      <p className="text-sm text-muted-foreground mb-2">Análise de perfil comportamental e competências</p>
+                      <h4 className="text-lg font-medium mb-1">{t("about.profile.gupy")}</h4>
+                      <p className="text-sm text-muted-foreground mb-2">{t("about.profile.gupy.desc")}</p>
                       <a 
                         href="https://assessments.gupy.io/behavioral/60a52f0f01664007a3277401634f9e9c/results/recruiter?utm_campaign=behavioral&utm_medium=shared&utm_source=mapping"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-primary hover:underline"
                       >
-                        Ver resultados completos
+                        {t("about.profile.gupy.btn")}
                         <svg className="ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
@@ -162,7 +162,7 @@ export function About() {
                     <path d="M10.3 3.6c.5-1.2 2-.2 1.4.7-1.6 3-1.6 4 0 7 .5.9-1 1.9-1.4.7-1.6-3-1.6-5.4 0-8.4Z"></path>
                     <path d="m16.7 7.3 2.3-.5c1-.2 1.7 1 .7 1.3L12 10.8a1 1 0 0 1-.8 0C7.6 9.5 5 9 3.1 10.1c-.8.5-1.5-.5-.7-1.3 1.5-1.3 3.4-1.8 4.9-1.9"></path>
                   </svg>
-                  Áreas de Interesse
+                  {t("about.interests.title")}
                 </CardTitle>
               </CardHeader>
               
@@ -180,8 +180,8 @@ export function About() {
                       </Badge>
                     </div>
                     <div>
-                      <h4 className="font-medium">Infraestrutura como Código</h4>
-                      <p className="text-sm text-muted-foreground">Terraform, Ansible, CloudFormation</p>
+                      <h4 className="font-medium">{t("about.interests.iac")}</h4>
+                      <p className="text-sm text-muted-foreground">{t("about.interests.iac.desc")}</p>
                     </div>
                   </div>
 
@@ -196,8 +196,8 @@ export function About() {
                       </Badge>
                     </div>
                     <div>
-                      <h4 className="font-medium">Orquestração de Contêineres</h4>
-                      <p className="text-sm text-muted-foreground">Kubernetes, Docker Swarm</p>
+                      <h4 className="font-medium">{t("about.interests.containers")}</h4>
+                      <p className="text-sm text-muted-foreground">{t("about.interests.containers.desc")}</p>
                     </div>
                   </div>
 
@@ -210,8 +210,8 @@ export function About() {
                       </Badge>
                     </div>
                     <div>
-                      <h4 className="font-medium">CI/CD Pipelines</h4>
-                      <p className="text-sm text-muted-foreground">GitHub Actions, Jenkins, GitLab CI</p>
+                      <h4 className="font-medium">{t("about.interests.cicd")}</h4>
+                      <p className="text-sm text-muted-foreground">{t("about.interests.cicd.desc")}</p>
                     </div>
                   </div>
                 </div>
