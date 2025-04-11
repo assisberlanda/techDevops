@@ -32,10 +32,10 @@ export function Navbar() {
   };
   
   const navLinks = [
-    { href: "#about", label: "Sobre" },
-    { href: "#experience", label: "Experiência" },
-    { href: "#projects", label: "Projetos" },
-    { href: "#contact", label: "Contato" }
+    { href: "#about", label: "1. Sobre Mim" },
+    { href: "#experience", label: "2. Experiências Profissionais" },
+    { href: "#projects", label: "3. Projetos" },
+    { href: "#contact", label: "4. Contato" }
   ];
   
   return (
@@ -88,13 +88,9 @@ export function Navbar() {
               {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
             </Button>
             
-            {isAdminPage ? (
+            {isAdminPage && (
               <Link href="/">
                 <Button variant="outline">Voltar ao site</Button>
-              </Link>
-            ) : (
-              <Link href="/admin">
-                <Button variant="outline" className="hidden md:block">Admin</Button>
               </Link>
             )}
             
@@ -143,13 +139,6 @@ export function Navbar() {
                   </a>
                 </li>
               ))}
-              <li>
-                <Link href="/admin">
-                  <a className="block py-2 hover:text-primary transition-colors">
-                    Admin
-                  </a>
-                </Link>
-              </li>
             </ul>
           </nav>
         </motion.div>

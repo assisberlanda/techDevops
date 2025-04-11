@@ -1,19 +1,4 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { 
@@ -21,58 +6,14 @@ import {
   Linkedin, 
   Github, 
   MapPin, 
-  Plane, 
   Award, 
   FileText, 
   Loader2 
 } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
-import { useContactContent, useSubmitContactForm } from "@/hooks/usePortfolioContent";
-
-const contactFormSchema = z.object({
-  name: z.string().min(2, { message: "O nome deve ter pelo menos 2 caracteres" }),
-  email: z.string().email({ message: "Email inválido" }),
-  subject: z.string().min(5, { message: "O assunto deve ter pelo menos 5 caracteres" }),
-  message: z.string().min(10, { message: "A mensagem deve ter pelo menos 10 caracteres" })
-});
-
-type ContactFormValues = z.infer<typeof contactFormSchema>;
+import { useContactContent } from "@/hooks/usePortfolioContent";
 
 export function Contact() {
   const { data: contactContent, isLoading } = useContactContent();
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const { toast } = useToast();
-  
-  const form = useForm<ContactFormValues>({
-    resolver: zodResolver(contactFormSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      subject: "",
-      message: ""
-    }
-  });
-  
-  const submitContactForm = useSubmitContactForm();
-  
-  const onSubmit = async (data: ContactFormValues) => {
-    try {
-      await submitContactForm.mutateAsync(data);
-      setFormSubmitted(true);
-      form.reset();
-      toast({
-        title: "Mensagem enviada",
-        description: "Obrigado por entrar em contato! Retornarei em breve.",
-        variant: "success"
-      });
-    } catch (error) {
-      toast({
-        title: "Erro ao enviar mensagem",
-        description: "Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.",
-        variant: "destructive"
-      });
-    }
-  };
   
   if (isLoading) {
     return (
@@ -95,7 +36,7 @@ export function Contact() {
   return (
     <section id="contact" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
-        <SectionHeading number="05" title={content.title} />
+        <SectionHeading number="4" title="Contato" />
         
         <motion.p 
           className="text-lg text-center max-w-2xl mx-auto mb-12"
@@ -107,108 +48,21 @@ export function Contact() {
           {content.description}
         </motion.p>
         
-        <div className="flex flex-col lg:flex-row gap-12">
+        <div className="flex justify-center">
           <motion.div 
-            className="lg:w-1/2"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Nome</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Seu nome" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email</FormLabel>
-                      <FormControl>
-                        <Input placeholder="seu.email@exemplo.com" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="subject"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Assunto</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Assunto da mensagem" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Mensagem</FormLabel>
-                      <FormControl>
-                        <Textarea 
-                          placeholder="Sua mensagem..." 
-                          rows={5} 
-                          {...field} 
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <Button 
-                  type="submit" 
-                  className="w-full" 
-                  disabled={submitContactForm.isPending}
-                >
-                  {submitContactForm.isPending ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Enviando...
-                    </>
-                  ) : (
-                    "Enviar Mensagem"
-                  )}
-                </Button>
-              </form>
-            </Form>
-          </motion.div>
-          
-          <motion.div 
-            className="lg:w-1/2"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="w-full max-w-2xl"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
             <Card className="h-full">
-              <CardHeader>
+              <CardHeader className="text-center">
                 <CardTitle>Informações de Contato</CardTitle>
               </CardHeader>
               
               <CardContent>
-                <div className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
                   <div className="flex items-start space-x-4">
                     <div className="bg-primary/20 p-3 rounded-full text-primary">
                       <Mail className="h-5 w-5" />
@@ -270,11 +124,11 @@ export function Contact() {
                   </div>
                 </div>
                 
-                <div className="mt-8 pt-8 border-t">
-                  <h4 className="font-medium mb-4">Links Rápidos</h4>
+                <div className="mt-8 pt-8 border-t flex justify-center">
                   <div className="flex flex-wrap gap-4">
                     <a 
-                      href="#" 
+                      href="/CV- DevOps.pdf" 
+                      target="_blank"
                       className="inline-flex items-center px-4 py-2 bg-primary/10 hover:bg-primary/20 text-foreground rounded-md transition-colors"
                     >
                       <FileText className="mr-2 h-4 w-4" />
