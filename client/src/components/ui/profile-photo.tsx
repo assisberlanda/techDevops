@@ -43,8 +43,6 @@ export function ProfilePhoto({ src, alt, size = "lg", className }: ProfilePhotoP
           {initials}
         </div>
       </div>
-      <div className="absolute inset-0 bg-primary/20 dark:bg-primary/40 rounded-full pointer-events-none"></div>
-      <div className="absolute -bottom-1 left-0 right-0 h-20 bg-gradient-to-t from-primary/30 to-transparent rounded-b-full pointer-events-none"></div>
     </div>
   );
 }

@@ -103,8 +103,8 @@ export class MemStorage implements IStorage {
       title: "Assis Berlanda de Medeiros",
       subtitle: "DevOps Engineer & Software Developer",
       description: "Sou estudante de Engenharia de Software com experiência em DevOps, focado em Docker, Kubernetes, Terraform e outras ferramentas de automação. Possuo inglês avançado e estou sempre aprendendo novas tecnologias.",
-      photoUrl: "/Assis-800.jpg",
-      cvUrl: "#"
+      photoUrl: "/Assis.jpeg",
+      cvUrl: "/CV- DevOps.pdf"
     });
     
     this.updatePortfolioContent("about", {

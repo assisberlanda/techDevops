@@ -8,6 +8,7 @@ import Admin from "@/pages/Admin";
 import { Navbar } from "@/components/Navbar";
 import { BackToTop } from "@/components/BackToTop";
 import { ThemeProvider } from "@/hooks/use-theme";
+import { LanguageProvider } from "@/hooks/use-language";
 
 function Router() {
   return (
@@ -22,12 +23,14 @@ function Router() {
 function App() {
   return (
     <ThemeProvider>
-      <QueryClientProvider client={queryClient}>
-        <Navbar />
-        <Router />
-        <BackToTop />
-        <Toaster />
-      </QueryClientProvider>
+      <LanguageProvider>
+        <QueryClientProvider client={queryClient}>
+          <Navbar />
+          <Router />
+          <BackToTop />
+          <Toaster />
+        </QueryClientProvider>
+      </LanguageProvider>
     </ThemeProvider>
   );
 }
