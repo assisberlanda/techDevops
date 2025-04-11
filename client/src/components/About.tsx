@@ -71,6 +71,7 @@ export function About() {
             </div>
           </motion.div>
           
+          {/* Áreas de Interesse - Substitui a antiga seção de certificações */}
           <motion.div 
             className="lg:w-5/12"
             initial={{ opacity: 0, y: 20 }}
@@ -80,34 +81,67 @@ export function About() {
           >
             <Card>
               <CardHeader className="border-b">
-                <CardTitle>Conquistas e Certificações</CardTitle>
+                <CardTitle className="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary mr-2">
+                    <path d="M3 15c1 1 2 1 4 1s3 0 4-1 2-1 4-1 3 0 4 1"></path>
+                    <path d="M3 21c1 0 2 0 4 0s3-1 4-1 2 0 4 0 3 1 4 1"></path>
+                    <path d="M10.3 3.6c.5-1.2 2-.2 1.4.7-1.6 3-1.6 4 0 7 .5.9-1 1.9-1.4.7-1.6-3-1.6-5.4 0-8.4Z"></path>
+                    <path d="m16.7 7.3 2.3-.5c1-.2 1.7 1 .7 1.3L12 10.8a1 1 0 0 1-.8 0C7.6 9.5 5 9 3.1 10.1c-.8.5-1.5-.5-.7-1.3 1.5-1.3 3.4-1.8 4.9-1.9"></path>
+                  </svg>
+                  Áreas de Interesse
+                </CardTitle>
               </CardHeader>
               
               <CardContent className="pt-6">
                 <div className="space-y-4">
-                  {content.certifications.map((cert, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <div className="bg-primary/20 p-2 rounded-md text-primary">
-                        <Badge className="bg-transparent hover:bg-transparent border-none p-0">
-                          <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                          </svg>
-                        </Badge>
-                      </div>
-                      <div>
-                        <h4 className="font-medium">{cert.name}</h4>
-                        <p className="text-sm text-muted-foreground">{cert.issuer}</p>
-                      </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="bg-primary/20 p-2 rounded-md text-primary">
+                      <Badge className="bg-transparent hover:bg-transparent border-none p-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                          <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                          <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                          <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                        </svg>
+                      </Badge>
                     </div>
-                  ))}
+                    <div>
+                      <h4 className="font-medium">Infraestrutura como Código</h4>
+                      <p className="text-sm text-muted-foreground">Terraform, Ansible, CloudFormation</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-3">
+                    <div className="bg-primary/20 p-2 rounded-md text-primary">
+                      <Badge className="bg-transparent hover:bg-transparent border-none p-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M19 12H5"></path>
+                          <path d="M14 7H5"></path>
+                          <path d="M19 17H5"></path>
+                        </svg>
+                      </Badge>
+                    </div>
+                    <div>
+                      <h4 className="font-medium">Orquestração de Contêineres</h4>
+                      <p className="text-sm text-muted-foreground">Kubernetes, Docker Swarm</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-3">
+                    <div className="bg-primary/20 p-2 rounded-md text-primary">
+                      <Badge className="bg-transparent hover:bg-transparent border-none p-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="m12 6 4 6 5-4-2 10H5L3 8l5 4.5L12 6Z"></path>
+                        </svg>
+                      </Badge>
+                    </div>
+                    <div>
+                      <h4 className="font-medium">CI/CD Pipelines</h4>
+                      <p className="text-sm text-muted-foreground">GitHub Actions, Jenkins, GitLab CI</p>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
-              
-              <CardFooter className="bg-muted/50 flex justify-center">
-                <a href="#" className="text-primary hover:underline font-medium">
-                  Ver todas as certificações <span aria-hidden="true">→</span>
-                </a>
-              </CardFooter>
             </Card>
           </motion.div>
         </div>
