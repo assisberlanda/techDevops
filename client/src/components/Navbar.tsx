@@ -11,66 +11,55 @@ export function Navbar() {
   const { theme, setTheme } = useTheme();
   const { t } = useLanguage();
   const [location] = useLocation();
-
+  
   const isAdminPage = location === "/admin";
-
+  
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-
+    
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
+  
   const navLinks = [
     { href: "#about", label: t("nav.about") },
     { href: "#experience", label: t("nav.experience") },
     { href: "#projects", label: t("nav.projects") },
-    { href: "#contact", label: t("nav.contact") },
+    { href: "#contact", label: t("nav.contact") }
   ];
-
+  
   return (
-    <header
-      className={cn(
-        "fixed w-full z-50 transition-all duration-300",
-        isScrolled
-          ? "bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm shadow-md text-gray-900 dark:text-white"
-          : "bg-transparent"
-      )}
-    >
+    <header className={cn(
+      "fixed w-full z-50 transition-all duration-300",
+      isScrolled ? "bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm shadow-md text-gray-900 dark:text-white" : "bg-transparent"
+    )}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <Link href="/">
-            <div className="flex items-center gap-2">
-              <img
-                src="/devops.png"
-                alt="DevOps Logo"
-                className="h-10 w-auto object-contain"
-              />
-              <span className="text-2xl font-bold text-primary dark:text-primary font-mono">
-                DevOps.assis
-              </span>
+            <div className="text-2xl font-bold text-primary dark:text-primary font-mono flex items-center gap-2">
+              <img src="/devops.webp" alt="DevOps" className="h-10 w-auto" /> <span>DevOps.assis</span>
             </div>
           </Link>
-
+          
           <div className="flex items-center space-x-8">
             {!isAdminPage && (
               <nav className="hidden md:block">
                 <ul className="flex space-x-8">
                   {navLinks.map((link) => (
                     <li key={link.href}>
-                      <a
-                        href={link.href}
+                      <a 
+                        href={link.href} 
                         className="font-medium hover:text-primary transition-colors"
                         onClick={(e) => {
-                          if (location !== "/") {
+                          if (location !== '/') {
                             return;
                           }
                           e.preventDefault();
                           const target = document.querySelector(link.href);
                           if (target) {
-                            target.scrollIntoView({ behavior: "smooth" });
+                            target.scrollIntoView({ behavior: 'smooth' });
                           }
                         }}
                       >
@@ -81,7 +70,7 @@ export function Navbar() {
                 </ul>
               </nav>
             )}
-
+            
             <Button
               variant="ghost"
               size="icon"
@@ -90,12 +79,13 @@ export function Navbar() {
             >
               {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
             </Button>
-
+            
             {isAdminPage && (
               <Link href="/">
-                <Button variant="outline">{t("nav.backToSite")}</Button>
+                <Button variant="outline">Voltar ao site</Button>
               </Link>
             )}
+            
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ export function Projects() {
   const { data: projects, isLoading: isLoadingProjects } = useProjects();
   const { data: githubRepos } = useGithubRepos();
   const { t } = useLanguage();
-
+  
   if (isLoadingProjects) {
     return (
       <section id="projects" className="py-20 flex justify-center items-center min-h-[400px]">
@@ -19,21 +19,21 @@ export function Projects() {
       </section>
     );
   }
-
+  
   if (!projects || projects.length === 0) {
     return (
       <section id="projects" className="py-20 flex justify-center items-center min-h-[400px]">
-        <p>{t("projects.nodata")}</p>
+        <p>No projects found</p>
       </section>
     );
   }
-
+  
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto px-6">
         <SectionHeading number="3" title={t("projects.title")} />
-
-        <motion.div
+        
+        <motion.div 
           className="text-center mb-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -44,7 +44,7 @@ export function Projects() {
             {t("projects.description")}
           </p>
         </motion.div>
-
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <ProjectCard
@@ -57,9 +57,9 @@ export function Projects() {
             />
           ))}
         </div>
-
+        
         {githubRepos && githubRepos.length > 0 && (
-          <motion.div
+          <motion.div 
             className="mt-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -67,13 +67,13 @@ export function Projects() {
             viewport={{ once: true }}
           >
             <h3 className="text-xl font-bold mb-8 text-center">{t("projects.github.title")}</h3>
-
+            
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {githubRepos.slice(0, 3).map((repo) => (
                 <ProjectCard
                   key={repo.id}
                   title={repo.name}
-                  description={repo.description || t("projects.github.noDescription")}
+                  description={repo.description || "No description available"}
                   tags={[repo.language || "Code", "GitHub"]}
                   repoUrl={repo.html_url}
                 />
@@ -81,11 +81,11 @@ export function Projects() {
             </div>
           </motion.div>
         )}
-
+        
         <div className="text-center mt-12">
-          <a
-            href="https://github.com/assisberlanda"
-            target="_blank"
+          <a 
+            href="https://github.com/assisberlanda" 
+            target="_blank" 
             rel="noopener noreferrer"
           >
             <Button variant="ghost" className="text-primary">
