@@ -48,14 +48,14 @@ export function Contact() {
               <CardContent>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-primary/20 p-3 rounded-full text-primary">
+                    <div className="bg-primary/20 p-3 rounded-full text-primary contact-icon">
                       <Mail className="h-5 w-5" />
                     </div>
                     <div>
                       <h4 className="font-medium mb-1">Email</h4>
                       <a
                         href={`mailto:${content.email}`}
-                        className="hover:text-primary transition-colors"
+                        className="hover:text-primary transition-colors contact-link"
                       >
                         {content.email}
                       </a>
@@ -63,7 +63,7 @@ export function Contact() {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="bg-primary/20 p-3 rounded-full text-primary">
+                    <div className="bg-primary/20 p-3 rounded-full text-primary contact-icon">
                       <Linkedin className="h-5 w-5" />
                     </div>
                     <div>
@@ -72,7 +72,7 @@ export function Contact() {
                         href={content.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-primary transition-colors"
+                        className="hover:text-primary transition-colors contact-link"
                       >
                         linkedin.com/in/assismedeiros
                       </a>
@@ -80,7 +80,7 @@ export function Contact() {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="bg-primary/20 p-3 rounded-full text-primary">
+                    <div className="bg-primary/20 p-3 rounded-full text-primary contact-icon">
                       <Github className="h-5 w-5" />
                     </div>
                     <div>
@@ -89,7 +89,7 @@ export function Contact() {
                         href={content.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-primary transition-colors"
+                        className="hover:text-primary transition-colors contact-link"
                       >
                         github.com/assisberlanda
                       </a>
@@ -97,7 +97,7 @@ export function Contact() {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="bg-primary/20 p-3 rounded-full text-primary">
+                    <div className="bg-primary/20 p-3 rounded-full text-primary contact-icon">
                       <MapPin className="h-5 w-5" />
                     </div>
                     <div>
