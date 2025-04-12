@@ -128,7 +128,7 @@ export function Skills() {
           <Card>
             <CardHeader className="border-b">
               <CardTitle className="flex items-center">
-                <Award className="h-6 w-6 text-primary mr-2" />
+                <span className="category-icon mr-2"><Award className="h-6 w-6 text-primary" /></span>
                 {t("skills.certifications.title")}
               </CardTitle>
             </CardHeader>

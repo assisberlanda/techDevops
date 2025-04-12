@@ -74,4 +74,21 @@
   .light .skill-progress {
     @apply bg-blue-600;
   }
+  
+  .light .category-icon {
+    @apply text-blue-700;
+  }
+  
+  /* Personalização da linha do tempo */
+  .light .timeline-date {
+    @apply text-blue-700 font-semibold;
+  }
+  
+  .light .timeline-dot {
+    @apply bg-blue-600 border-white;
+  }
+  
+  .light .timeline-line {
+    @apply bg-blue-200;
+  }
 }
