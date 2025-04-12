@@ -114,7 +114,7 @@ export function Contact() {
                       href={content.dioProfile}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center px-4 py-2 bg-primary/10 hover:bg-primary/20 text-foreground rounded-md transition-colors"
+                      className="inline-flex items-center px-4 py-2 bg-primary/10 hover:bg-primary/20 text-foreground rounded-md transition-colors profile-btn"
                     >
                       <Award className="mr-2 h-4 w-4" />
                       {t("contact.dioProfile")}

@@ -36,7 +36,7 @@ export function BackToTop() {
           <Button
             variant="default"
             size="icon"
-            className="rounded-full shadow-lg"
+            className="rounded-full shadow-lg back-to-top-btn"
             onClick={scrollToTop}
             aria-label="Back to top"
           >
