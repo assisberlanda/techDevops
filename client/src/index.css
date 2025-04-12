@@ -123,6 +123,11 @@
     animation: slideDown 0.3s ease-out forwards;
   }
   
+  .light .mobile-menu-button,
+  .light .theme-toggle-button {
+    @apply text-blue-700 hover:bg-blue-50;
+  }
+  
   @keyframes slideDown {
     from {
       opacity: 0;

@@ -68,9 +68,9 @@ export function Navbar() {
               <img
                 src="/devops.webp"
                 alt="DevOps Logo"
-                className="h-10 w-auto object-contain"
+                className="h-8 sm:h-10 w-auto object-contain"
               />
-              <span className="text-2xl font-bold text-primary dark:text-primary font-mono">
+              <span className="text-xl sm:text-2xl font-bold text-primary dark:text-primary font-mono">
                 DevOps.assis
               </span>
             </div>
@@ -109,7 +109,7 @@ export function Navbar() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="md:hidden text-foreground"
+                  className="md:hidden text-foreground mobile-menu-button"
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                   aria-label="Toggle mobile menu"
                 >
@@ -154,7 +154,7 @@ export function Navbar() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-md font-medium transition-colors hover:text-primary"
+                  className="block py-2 px-4 hover:bg-blue-50 dark:hover:bg-slate-800 rounded-md font-medium transition-colors hover:text-blue-700"
                   onClick={(e) => {
                     e.preventDefault();
                     handleLinkClick(link.href);
