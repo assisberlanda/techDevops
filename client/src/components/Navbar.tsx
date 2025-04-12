@@ -23,13 +23,6 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { href: "#about", label: t("nav.about") },
-    { href: "#experience", label: t("nav.experience") },
-    { href: "#projects", label: t("nav.projects") },
-    { href: "#contact", label: t("nav.contact") },
-  ];
-
   return (
     <header
       className={cn(
@@ -41,6 +34,7 @@ export function Navbar() {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
+          {/* Logo */}
           <Link href="/">
             <div className="flex items-center gap-2">
               <img
@@ -54,11 +48,17 @@ export function Navbar() {
             </div>
           </Link>
 
+          {/* Navigation and Actions */}
           <div className="flex items-center space-x-8">
             {!isAdminPage && (
               <nav className="hidden md:block">
                 <ul className="flex space-x-8">
-                  {navLinks.map((link) => (
+                  {[
+                    { href: "#about", label: t("nav.about") },
+                    { href: "#experience", label: t("nav.experience") },
+                    { href: "#projects", label: t("nav.projects") },
+                    { href: "#contact", label: t("nav.contact") },
+                  ].map((link) => (
                     <li key={link.href}>
                       <a
                         href={link.href}
@@ -82,16 +82,22 @@ export function Navbar() {
               </nav>
             )}
 
+            {/* Language Toggle */}
             <Button
               variant="ghost"
-              onClick={() => setLanguage(language === "pt-BR" ? "en-US" : "pt-BR")}
+              onClick={() =>
+                setLanguage(language === "pt-BR" ? "en-US" : "pt-BR")
+              }
               aria-label="Toggle language"
               className="px-3 mr-2"
             >
               <Globe size={16} className="mr-1" />
-              <span className="text-xs font-bold">{language === "pt-BR" ? "PT" : "EN"}</span>
+              <span className="text-xs font-bold">
+                {language === "pt-BR" ? "PT" : "EN"}
+              </span>
             </Button>
-            
+
+            {/* Theme Toggle */}
             <Button
               variant="ghost"
               size="icon"
@@ -101,6 +107,7 @@ export function Navbar() {
               {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
             </Button>
 
+            {/* Back to Site Button */}
             {isAdminPage && (
               <Link href="/">
                 <Button variant="outline">{t("nav.backToSite")}</Button>
