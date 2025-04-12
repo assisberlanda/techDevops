@@ -92,7 +92,7 @@ export function Navbar() {
                       <li key={link.href}>
                         <a
                           href={link.href}
-                          className="font-medium text-primary dark:text-emerald-300 transition-colors"
+                          className="font-medium text-primary hover:text-blue-700 dark:text-emerald-300 dark:hover:text-emerald-400 transition-colors"
                           onClick={(e) => {
                             e.preventDefault();
                             handleLinkClick(link.href);

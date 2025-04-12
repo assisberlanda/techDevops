@@ -139,7 +139,12 @@
   
   /* Ícones do footer no modo claro */
   .light .footer-icon {
-    @apply text-blue-700;
+    @apply text-blue-700 hover:text-blue-800;
+  }
+  
+  /* Ícones do footer no modo escuro */
+  .dark .footer-icon {
+    @apply text-emerald-300 hover:text-emerald-400;
   }
   
   @keyframes slideDown {
