@@ -47,7 +47,7 @@ export function Projects() {
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto px-6">
-        <SectionHeading number="3" title={t("projects.title")} />
+        <SectionHeading title={t("projects.title")} />
 
         <motion.div
           className="text-center mb-10"
