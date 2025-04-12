@@ -92,7 +92,7 @@ export function Navbar() {
                       <li key={link.href}>
                         <a
                           href={link.href}
-                          className="font-medium text-primary hover:opacity-80 transition-colors"
+                          className="font-medium hover:text-primary transition-colors"
                           onClick={(e) => {
                             e.preventDefault();
                             handleLinkClick(link.href);
@@ -155,7 +155,7 @@ export function Navbar() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="block py-2 px-4 hover:bg-primary/10 dark:hover:bg-slate-800 rounded-md font-medium transition-colors text-primary hover:opacity-80"
+                  className="block py-2 px-4 hover:bg-blue-50 dark:hover:bg-slate-800 rounded-md font-medium transition-colors hover:text-blue-700"
                   onClick={(e) => {
                     e.preventDefault();
                     handleLinkClick(link.href);
