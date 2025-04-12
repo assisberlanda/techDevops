@@ -7,6 +7,22 @@ import { Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/hooks/use-language";
 
+// Helper to get translated project key
+function getTranslatedProjectKey(title: string): string {
+  if (title.includes("Docker Compose")) {
+    return "dockerCompose";
+  } else if (title.includes("Terraform")) {
+    return "terraform";
+  } else if (title.includes("Python")) {
+    return "python";
+  } else if (title.includes("CI/CD")) {
+    return "cicd";
+  } else if (title.includes("Portfolio") || title.includes("Portfólio")) {
+    return "portfolio";
+  }
+  return "";
+}
+
 export function Projects() {
   const { data: projects, isLoading: isLoadingProjects } = useProjects();
   const { data: githubRepos } = useGithubRepos();
@@ -46,16 +62,19 @@ export function Projects() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              tags={project.tags}
-              repoUrl={project.repoUrl || undefined}
-              demoUrl={project.demoUrl || undefined}
-            />
-          ))}
+          {projects.map((project) => {
+            const projKey = getTranslatedProjectKey(project.title);
+            return (
+              <ProjectCard
+                key={project.id}
+                title={projKey ? t(`projects.${projKey}`) : project.title}
+                description={projKey ? t(`projects.${projKey}.description`) : project.description}
+                tags={project.tags}
+                repoUrl={project.repoUrl || undefined}
+                demoUrl={project.demoUrl || undefined}
+              />
+            );
+          })}
         </div>
 
         {githubRepos && githubRepos.length > 0 && (
