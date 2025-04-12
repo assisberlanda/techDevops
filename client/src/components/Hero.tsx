@@ -68,15 +68,12 @@ export function Hero() {
               {content.title}
             </motion.h1>
             
-            <motion.div
+            <motion.h2
               variants={item}
-              className="flex items-center justify-center lg:justify-start gap-3 mb-6"
+              className="text-2xl md:text-3xl text-muted-foreground font-medium mb-6"
             >
-              <h2 className="text-2xl md:text-3xl text-muted-foreground font-medium">
-                {t("hero.subtitle")}
-              </h2>
-              <img src="/devops.png" alt="DevOps" className="h-8 md:h-10" />
-            </motion.div>
+              {t("hero.subtitle")}
+            </motion.h2>
             
             <motion.p 
               variants={item}
