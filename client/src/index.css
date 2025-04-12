@@ -91,4 +91,30 @@
   .light .timeline-line {
     @apply bg-blue-200;
   }
+  
+  /* Personalização dos projetos */
+  .light .project-folder {
+    @apply text-blue-600;
+  }
+  
+  .light .project-link {
+    @apply text-blue-600 hover:text-blue-800;
+  }
+  
+  .light .project-tag {
+    @apply bg-blue-50 text-blue-700 px-3 py-1 rounded-md font-semibold;
+  }
+  
+  /* Personalização do Contato */
+  .light .contact-icon {
+    @apply bg-blue-50 text-blue-700;
+  }
+  
+  .light .contact-link {
+    @apply text-blue-700 hover:text-blue-800 font-semibold;
+  }
+  
+  .light .profile-btn {
+    @apply bg-blue-100 hover:bg-blue-200 text-blue-700;
+  }
 }
