@@ -7,7 +7,7 @@ import { useLanguage } from "@/hooks/use-language";
 export function Experience() {
   const { data: experiences, isLoading } = useExperiences();
   const { t } = useLanguage();
-  
+
   if (isLoading) {
     return (
       <section id="experience" className="py-20 bg-muted/30 flex justify-center items-center min-h-[400px]">
@@ -15,20 +15,20 @@ export function Experience() {
       </section>
     );
   }
-  
+
   if (!experiences || experiences.length === 0) {
     return (
       <section id="experience" className="py-20 bg-muted/30 flex justify-center items-center min-h-[400px]">
-        <p>No experience data found</p>
+        <p>{t("experience.nodata")}</p>
       </section>
     );
   }
-  
+
   return (
     <section id="experience" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
         <SectionHeading number="2" title={t("experience.title")} />
-        
+
         <div className="max-w-3xl mx-auto">
           <div className="relative space-y-12 ml-8">
             {experiences.map((experience) => (
