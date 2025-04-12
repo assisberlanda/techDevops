@@ -45,7 +45,7 @@ export function Navbar() {
         <div className="flex justify-between items-center">
           <Link href="/">
             <div className="text-2xl font-bold text-primary dark:text-primary font-mono flex items-center gap-2">
-              <img src="/devops.png" alt="DevOps" className="h-8" /> <span>DevOps.assis</span>
+              <img src="/devops.webp" alt="DevOps" className="h-10 w-auto" /> <span>DevOps.assis</span>
             </div>
           </Link>
           
