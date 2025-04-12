@@ -5,7 +5,7 @@ import { Menu, X, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/use-theme";
 import { useLanguage } from "@/hooks/use-language";
-import { useOnClickOutside } from "@/hooks/use-click-outside";
+import { useOnClickOutside } from "../hooks/use-click-outside";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
