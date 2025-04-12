@@ -13,7 +13,7 @@
   
   /* Melhoria da legibilidade no modo claro */
   .light .text-primary {
-    @apply text-emerald-700;
+    @apply text-blue-700 font-semibold;
   }
   
   .dark .text-primary {
