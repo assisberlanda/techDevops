@@ -94,7 +94,14 @@ const translationMap: Record<Language, Record<string, string>> = {
     "contact.github": "GitHub", 
     "contact.location": "Localização",
     "contact.downloadCV": "Download CV",
-    "contact.dioProfile": "Perfil DIO"
+    "contact.dioProfile": "Perfil DIO",
+    
+    // Footer
+    "footer.rights": "Todos os direitos reservados.",
+    "footer.builtWith": "Feito com",
+    "footer.stack": "usando React, Tailwind CSS e API do GitHub",
+    "footer.terms": "Termos de Uso",
+    "footer.privacy": "Política de Privacidade"
   },
   "en-US": {
     // Hero
@@ -168,7 +175,14 @@ const translationMap: Record<Language, Record<string, string>> = {
     "contact.github": "GitHub", 
     "contact.location": "Location",
     "contact.downloadCV": "Download CV",
-    "contact.dioProfile": "DIO Profile"
+    "contact.dioProfile": "DIO Profile",
+    
+    // Footer
+    "footer.rights": "All rights reserved.",
+    "footer.builtWith": "Built with",
+    "footer.stack": "using React, Tailwind CSS, and GitHub API",
+    "footer.terms": "Terms of Use",
+    "footer.privacy": "Privacy Policy"
   }
 };
 
