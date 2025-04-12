@@ -4,7 +4,6 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { Mail, Linkedin, Github, MapPin, Award, Loader2 } from "lucide-react";
 import { useContactContent } from "@/hooks/usePortfolioContent";
 import { useLanguage } from "@/hooks/use-language";
-import { DownloadCVButton } from "@/components/DownloadCVButton";
 
 export function Contact() {
   const { data: contactContent, isLoading } = useContactContent();
@@ -121,7 +120,6 @@ export function Contact() {
 
                 <div className="mt-8 pt-8 border-t flex justify-center">
                   <div className="flex flex-wrap gap-4">
-                    <DownloadCVButton />
                     <a
                       href={content.dioProfile}
                       target="_blank"
