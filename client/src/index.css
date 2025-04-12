@@ -48,4 +48,17 @@
   .light .contact-link {
     @apply text-blue-600 hover:text-blue-800 font-medium;
   }
+  
+  /* Personalização dos cards de projetos */
+  .light .project-folder {
+    @apply text-blue-700;
+  }
+  
+  .light .project-link {
+    @apply text-gray-600 hover:text-blue-700;
+  }
+  
+  .light .project-tag {
+    @apply text-blue-700 bg-blue-50 px-2 py-0.5 rounded-md;
+  }
 }

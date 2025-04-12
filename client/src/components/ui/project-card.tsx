@@ -32,7 +32,7 @@ export function ProjectCard({
       <Card className="h-full overflow-hidden transition-all duration-300 hover:shadow-lg">
         <CardContent className="p-6">
           <div className="flex justify-between items-start mb-4">
-            <div className="text-primary text-3xl">
+            <div className="text-primary text-3xl project-folder">
               <FolderOpen />
             </div>
             <div className="flex space-x-3">
@@ -41,7 +41,7 @@ export function ProjectCard({
                   href={repoUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-muted-foreground hover:text-primary transition-colors project-link"
                 >
                   <Github size={20} />
                 </a>
@@ -51,7 +51,7 @@ export function ProjectCard({
                   href={demoUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-muted-foreground hover:text-primary transition-colors project-link"
                 >
                   <ExternalLink size={20} />
                 </a>
@@ -66,7 +66,7 @@ export function ProjectCard({
           
           <div className="flex flex-wrap gap-2 text-xs font-mono text-muted-foreground">
             {tags.map((tag, index) => (
-              <span key={index}>{tag}</span>
+              <span key={index} className="project-tag">{tag}</span>
             ))}
           </div>
         </CardContent>
