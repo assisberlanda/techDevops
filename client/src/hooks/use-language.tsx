@@ -28,10 +28,10 @@ const translationMap: Record<Language, Record<string, string>> = {
     "hero.description": "Sou estudante de Engenharia de Software com experiência em DevOps, focado em Docker, Kubernetes, Terraform e outras ferramentas de automação. Possuo inglês avançado e estou sempre aprendendo novas tecnologias.",
     
     // Navbar
-    "nav.about": "1. Sobre Mim",
-    "nav.experience": "2. Experiências Profissionais",
-    "nav.projects": "3. Projetos",
-    "nav.contact": "4. Contato",
+    "nav.about": "Sobre Mim",
+    "nav.experience": "Experiências Profissionais",
+    "nav.projects": "Projetos",
+    "nav.contact": "Contato",
     
     // About
     "about.title": "Sobre Mim",
@@ -109,10 +109,10 @@ const translationMap: Record<Language, Record<string, string>> = {
     "hero.description": "I'm a Software Engineering student with experience in DevOps, focused on Docker, Kubernetes, Terraform, and other automation tools. I have advanced English skills and I'm constantly learning new technologies.",
     
     // Navbar
-    "nav.about": "1. About Me",
-    "nav.experience": "2. Professional Experience",
-    "nav.projects": "3. Projects",
-    "nav.contact": "4. Contact",
+    "nav.about": "About Me",
+    "nav.experience": "Professional Experience",
+    "nav.projects": "Projects",
+    "nav.contact": "Contact",
     
     // About
     "about.title": "About Me",
