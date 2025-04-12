@@ -59,12 +59,31 @@ const translationMap: Record<Language, Record<string, string>> = {
     
     // Experience
     "experience.title": "Experiências Profissionais",
+    "experience.civilAviation": "Fiscal de Aviação Civil",
+    "experience.civilAviation.company": "Aeroporto Internacional de Brasília",
+    "experience.civilAviation.description": "Fiscalização de procedimentos operacionais, garantindo o cumprimento das normas de segurança da aviação civil. Realização de inspeções de segurança e coordenação de equipes em ambiente aeroportuário.",
+    "experience.programmer": "Programador",
+    "experience.programmer.company": "MDIC - Ministério do Desenvolvimento, Indústria e Comércio",
+    "experience.programmer.description": "Desenvolvimento e manutenção de sistemas internos utilizando Java e Oracle. Participação em projetos de modernização tecnológica e integração de sistemas legados.",
+    "experience.english": "Professor de Inglês",
+    "experience.english.company": "Curso de Inglês KNN",
+    "experience.english.description": "Ministração de aulas de inglês para turmas de diferentes níveis. Desenvolvimento de material didático e avaliação de progresso dos alunos.",
     
     // Projects
     "projects.title": "Projetos",
     "projects.description": "Aqui estão alguns dos meus projetos recentes. Esses projetos demonstram minhas habilidades em DevOps, automação e desenvolvimento de software.",
     "projects.github.title": "Projetos do GitHub",
     "projects.more": "Ver mais projetos no GitHub",
+    "projects.dockerCompose": "Docker Compose Collection",
+    "projects.dockerCompose.description": "Coleção de arquivos Docker Compose para diferentes pilhas de aplicações, com configurações otimizadas para desenvolvimento e produção.",
+    "projects.terraform": "Terraform Azure Modules",
+    "projects.terraform.description": "Coleção de módulos Terraform para provisionamento de infraestrutura na Azure, incluindo VMs, redes e serviços gerenciados.",
+    "projects.python": "Python API Testing Framework",
+    "projects.python.description": "Framework para automação de testes de APIs RESTful usando Python, com geração de relatórios e integração com CI/CD.",
+    "projects.cicd": "CI/CD Pipeline Templates",
+    "projects.cicd.description": "Templates para pipelines de CI/CD usando GitHub Actions, com foco em aplicações containerizadas e infraestrutura como código.",
+    "projects.portfolio": "Portfolio Pessoal",
+    "projects.portfolio.description": "Site de portfólio pessoal desenvolvido com React, Tailwind CSS e API do GitHub, com design responsivo e integração com APIs de terceiros.",
     
     // Contact
     "contact.title": "Contato",
@@ -114,12 +133,31 @@ const translationMap: Record<Language, Record<string, string>> = {
     
     // Experience
     "experience.title": "Professional Experience",
+    "experience.civilAviation": "Civil Aviation Inspector",
+    "experience.civilAviation.company": "Brasília International Airport",
+    "experience.civilAviation.description": "Inspection of operational procedures, ensuring compliance with civil aviation safety regulations. Conducting security inspections and coordinating teams in the airport environment.",
+    "experience.programmer": "Programmer",
+    "experience.programmer.company": "MDIC - Ministry of Development, Industry and Commerce",
+    "experience.programmer.description": "Development and maintenance of internal systems using Java and Oracle. Participation in technological modernization projects and integration of legacy systems.",
+    "experience.english": "English Teacher",
+    "experience.english.company": "KNN English Course",
+    "experience.english.description": "Teaching English classes to groups of different levels. Development of teaching materials and assessment of student progress.",
     
     // Projects
     "projects.title": "Projects",
     "projects.description": "Here are some of my recent projects. These projects demonstrate my skills in DevOps, automation, and software development.",
     "projects.github.title": "GitHub Projects",
     "projects.more": "See more projects on GitHub",
+    "projects.dockerCompose": "Docker Compose Collection",
+    "projects.dockerCompose.description": "Collection of Docker Compose files for different application stacks, with optimized configurations for development and production.",
+    "projects.terraform": "Terraform Azure Modules",
+    "projects.terraform.description": "Collection of Terraform modules for provisioning infrastructure on Azure, including VMs, networks, and managed services.",
+    "projects.python": "Python API Testing Framework",
+    "projects.python.description": "Framework for automating RESTful API tests using Python, with report generation and CI/CD integration.",
+    "projects.cicd": "CI/CD Pipeline Templates",
+    "projects.cicd.description": "Templates for CI/CD pipelines using GitHub Actions, focusing on containerized applications and infrastructure as code.",
+    "projects.portfolio": "Personal Portfolio",
+    "projects.portfolio.description": "Personal portfolio website developed with React, Tailwind CSS and GitHub API, with responsive design and integration with third-party APIs.",
     
     // Contact
     "contact.title": "Contact",

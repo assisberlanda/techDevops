@@ -4,6 +4,18 @@ import { TimelineItem } from "@/components/ui/timeline-item";
 import { Loader2 } from "lucide-react";
 import { useLanguage } from "@/hooks/use-language";
 
+// Helper to get translated experience data
+function getTranslatedExperienceKey(position: string): string {
+  if (position.includes("Fiscal") || position.includes("Civil Aviation")) {
+    return "civilAviation";
+  } else if (position.includes("Programador") || position.includes("Programmer")) {
+    return "programmer";
+  } else if (position.includes("Professor") || position.includes("English Teacher")) {
+    return "english";
+  }
+  return "";
+}
+
 export function Experience() {
   const { data: experiences, isLoading } = useExperiences();
   const { t } = useLanguage();
@@ -31,15 +43,18 @@ export function Experience() {
 
         <div className="max-w-3xl mx-auto">
           <div className="relative space-y-12 ml-8">
-            {experiences.map((experience) => (
-              <TimelineItem
-                key={experience.id}
-                date={`${experience.startDate}${experience.endDate ? ` - ${experience.endDate}` : ''}`}
-                title={experience.position}
-                subtitle={experience.company}
-                description={experience.description}
-              />
-            ))}
+            {experiences.map((experience) => {
+              const expKey = getTranslatedExperienceKey(experience.position);
+              return (
+                <TimelineItem
+                  key={experience.id}
+                  date={`${experience.startDate}${experience.endDate ? ` - ${experience.endDate}` : ''}`}
+                  title={expKey ? t(`experience.${expKey}`) : experience.position}
+                  subtitle={expKey ? t(`experience.${expKey}.company`) : experience.company}
+                  description={expKey ? t(`experience.${expKey}.description`) : experience.description}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
