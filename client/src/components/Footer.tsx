@@ -27,7 +27,7 @@ export function Footer() {
                 href="https://www.linkedin.com/in/assismedeiros/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xl hover:text-primary transition-colors"
+                className="text-xl hover:text-primary transition-colors footer-icon"
                 aria-label="LinkedIn"
               >
                 <Linkedin />
@@ -36,14 +36,14 @@ export function Footer() {
                 href="https://github.com/assisberlanda"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xl hover:text-primary transition-colors"
+                className="text-xl hover:text-primary transition-colors footer-icon"
                 aria-label="GitHub"
               >
                 <Github />
               </a>
               <a
                 href="mailto:berlanda.medeiros@gmail.com"
-                className="text-xl hover:text-primary transition-colors"
+                className="text-xl hover:text-primary transition-colors footer-icon"
                 aria-label="Email"
               >
                 <Mail />
@@ -52,7 +52,7 @@ export function Footer() {
                 href="https://www.dio.me/users/dydhio_34628"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xl hover:text-primary transition-colors"
+                className="text-xl hover:text-primary transition-colors footer-icon"
                 aria-label="DIO Profile"
               >
                 <Award />
