@@ -1,19 +1,16 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/use-theme";
 import { useLanguage } from "@/hooks/use-language";
-import { useOnClickOutside } from "@/hooks/use-click-outside";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const { t } = useLanguage();
   const [location] = useLocation();
-  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   const isAdminPage = location === "/admin";
 
@@ -25,27 +22,6 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  useOnClickOutside(mobileMenuRef, () => setMobileMenuOpen(false));
-
-  const navigationLinks = [
-    { href: "#about", label: t("nav.about") },
-    { href: "#experience", label: t("nav.experience") },
-    { href: "#projects", label: t("nav.projects") },
-    { href: "#contact", label: t("nav.contact") },
-  ];
-
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (location !== "/") {
-      return;
-    }
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-      setMobileMenuOpen(false);
-    }
-  };
 
   return (
     <header
@@ -73,16 +49,30 @@ export function Navbar() {
           </Link>
 
           {/* Navigation and Actions */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-8">
             {!isAdminPage && (
               <nav className="hidden md:block">
                 <ul className="flex space-x-8">
-                  {navigationLinks.map((link) => (
+                  {[
+                    { href: "#about", label: t("nav.about") },
+                    { href: "#experience", label: t("nav.experience") },
+                    { href: "#projects", label: t("nav.projects") },
+                    { href: "#contact", label: t("nav.contact") },
+                  ].map((link) => (
                     <li key={link.href}>
                       <a
                         href={link.href}
                         className="font-medium hover:text-primary transition-colors"
-                        onClick={(e) => scrollToSection(e, link.href)}
+                        onClick={(e) => {
+                          if (location !== "/") {
+                            return;
+                          }
+                          e.preventDefault();
+                          const target = document.querySelector(link.href);
+                          if (target) {
+                            target.scrollIntoView({ behavior: "smooth" });
+                          }
+                        }}
                       >
                         {link.label}
                       </a>
@@ -102,19 +92,6 @@ export function Navbar() {
               {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
             </Button>
 
-            {/* Mobile Menu Button */}
-            {!isAdminPage && (
-              <Button
-                variant="ghost"
-                size="icon"
-                className="md:hidden"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                aria-label="Toggle mobile menu"
-              >
-                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </Button>
-            )}
-
             {/* Back to Site Button */}
             {isAdminPage && (
               <Link href="/">
@@ -123,28 +100,6 @@ export function Navbar() {
             )}
           </div>
         </div>
-
-        {/* Mobile Menu */}
-        {mobileMenuOpen && !isAdminPage && (
-          <div 
-            ref={mobileMenuRef}
-            className="md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm rounded-lg shadow-lg mt-4 p-4 transition-all duration-300 absolute left-6 right-6"
-          >
-            <ul className="flex flex-col space-y-4">
-              {navigationLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="block py-2 px-4 hover:bg-primary/10 hover:text-primary rounded-md transition-colors font-medium"
-                    onClick={(e) => scrollToSection(e, link.href)}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
       </div>
     </header>
   );

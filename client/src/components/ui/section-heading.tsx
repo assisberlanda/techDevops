@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface SectionHeadingProps {
-  number?: string;
+  number: string;
   title: string;
   className?: string;
 }
 
-export function SectionHeading({ title, className }: SectionHeadingProps) {
+export function SectionHeading({ number, title, className }: SectionHeadingProps) {
   return (
     <motion.h2 
       initial={{ opacity: 0, y: 20 }}
@@ -16,7 +16,7 @@ export function SectionHeading({ title, className }: SectionHeadingProps) {
       viewport={{ once: true }}
       className={cn("text-3xl font-bold mb-12 text-center", className)}
     >
-      {title}
+      <span className="text-primary font-mono">{number}.</span> {title}
     </motion.h2>
   );
 }
