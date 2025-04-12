@@ -136,13 +136,14 @@ const translationMap: Record<Language, Record<string, string>> = {
 
 export function LanguageProvider({
   children,
+  defaultLanguage = "pt-BR",
 }: LanguageProviderProps) {
-  // Fixo em português brasileiro
-  const language = "pt-BR";
-  const translations = translationMap["pt-BR"];
-
-  // Função vazia para manter compatibilidade com a interface LanguageContextType
-  const setLanguage = () => {};
+  const [language, setLanguage] = useState<Language>(defaultLanguage);
+  const [translations, setTranslations] = useState(translationMap[defaultLanguage]);
+  
+  useEffect(() => {
+    setTranslations(translationMap[language]);
+  }, [language]);
 
   const t = (key: string): string => {
     return translations[key] || key;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/use-theme";
 import { useLanguage } from "@/hooks/use-language";
@@ -9,7 +9,7 @@ import { useLanguage } from "@/hooks/use-language";
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
-  const { t } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
   const [location] = useLocation();
 
   const isAdminPage = location === "/admin";
@@ -82,6 +82,16 @@ export function Navbar() {
               </nav>
             )}
 
+            <Button
+              variant="ghost"
+              onClick={() => setLanguage(language === "pt-BR" ? "en-US" : "pt-BR")}
+              aria-label="Toggle language"
+              className="px-3 mr-2"
+            >
+              <Globe size={16} className="mr-1" />
+              <span className="text-xs font-bold">{language === "pt-BR" ? "PT" : "EN"}</span>
+            </Button>
+            
             <Button
               variant="ghost"
               size="icon"
