@@ -27,7 +27,7 @@ export function SkillBar({ name, percentage, className }: SkillBarProps) {
       </div>
       <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
         <motion.div 
-          className="bg-primary h-2.5 rounded-full"
+          className="bg-primary h-2.5 rounded-full skill-progress"
           initial={{ width: 0 }}
           animate={{ width: isVisible ? `${percentage}%` : 0 }}
           transition={{ duration: 1, ease: "easeOut" }}

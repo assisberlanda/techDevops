@@ -61,4 +61,17 @@
   .light .project-tag {
     @apply text-blue-700 bg-blue-50 px-2 py-0.5 rounded-md;
   }
+  
+  /* Personalização das habilidades */
+  .light .skill-badge {
+    @apply bg-blue-50 text-blue-700 border-blue-200;
+  }
+  
+  .light .cert-icon {
+    @apply bg-blue-50 text-blue-700;
+  }
+  
+  .light .skill-progress {
+    @apply bg-blue-600;
+  }
 }

@@ -82,7 +82,7 @@ export function Skills() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <h3 className="text-xl font-bold mb-6 flex items-center">
-                {categoryIcons[category] || <Code className="h-6 w-6 text-primary mr-2" />}
+                <span className="category-icon mr-2">{categoryIcons[category] || <Code className="h-6 w-6 text-primary" />}</span>
                 {t(`skills.categories.${category}`)}
               </h3>
 
@@ -105,13 +105,13 @@ export function Skills() {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <h3 className="text-xl font-bold mb-8 text-center flex items-center justify-center">
-              <BarChart3 className="h-6 w-6 text-primary mr-2" />
+              <span className="category-icon mr-2"><BarChart3 className="h-6 w-6 text-primary" /></span>
               {t("skills.other")}
             </h3>
 
             <div className="flex flex-wrap justify-center gap-4">
               {otherSkills.map((skill) => (
-                <Badge key={skill.id} variant="outline" className="px-4 py-2 bg-primary/20 text-foreground">
+                <Badge key={skill.id} variant="outline" className="px-4 py-2 bg-primary/20 text-foreground skill-badge">
                   {skill.name}
                 </Badge>
               ))}
@@ -137,7 +137,7 @@ export function Skills() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {certifications.map((cert, index) => (
                   <div key={index} className="flex items-start space-x-3">
-                    <div className="bg-primary/20 p-2 rounded-md text-primary">
+                    <div className="bg-primary/20 p-2 rounded-md text-primary cert-icon">
                       <Badge className="bg-transparent hover:bg-transparent border-none p-0">
                         <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
