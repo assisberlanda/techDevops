@@ -48,7 +48,7 @@ export function Contact() {
               <CardContent>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-primary/20 p-3 rounded-full text-primary contact-icon">
+                    <div className="bg-blue-50 p-3 rounded-full text-blue-700 contact-icon">
                       <Mail className="h-5 w-5" />
                     </div>
                     <div>
@@ -63,7 +63,7 @@ export function Contact() {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="bg-primary/20 p-3 rounded-full text-primary contact-icon">
+                    <div className="bg-blue-50 p-3 rounded-full text-blue-700 contact-icon">
                       <Linkedin className="h-5 w-5" />
                     </div>
                     <div>
@@ -80,7 +80,7 @@ export function Contact() {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="bg-primary/20 p-3 rounded-full text-primary contact-icon">
+                    <div className="bg-blue-50 p-3 rounded-full text-blue-700 contact-icon">
                       <Github className="h-5 w-5" />
                     </div>
                     <div>
@@ -97,7 +97,7 @@ export function Contact() {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="bg-primary/20 p-3 rounded-full text-primary contact-icon">
+                    <div className="bg-blue-50 p-3 rounded-full text-blue-700 contact-icon">
                       <MapPin className="h-5 w-5" />
                     </div>
                     <div>
@@ -114,7 +114,7 @@ export function Contact() {
                       href={content.dioProfile}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center px-4 py-2 bg-primary/10 hover:bg-primary/20 text-foreground rounded-md transition-colors profile-btn"
+                      className="inline-flex items-center px-4 py-2 rounded-md transition-colors profile-btn"
                     >
                       <Award className="mr-2 h-4 w-4" />
                       {t("contact.dioProfile")}
