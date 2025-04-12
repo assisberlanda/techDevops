@@ -1,18 +1,32 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/use-theme";
 import { useLanguage } from "@/hooks/use-language";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const { t } = useLanguage();
   const [location] = useLocation();
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   const isAdminPage = location === "/admin";
+  
+  // Função para fechar o menu ao clicar em um link
+  const handleLinkClick = (href: string) => {
+    setIsMobileMenuOpen(false);
+    if (location !== "/") {
+      return;
+    }
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +35,20 @@ export function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  
+  // Fechar o menu mobile quando clicar fora dele
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   return (
@@ -49,37 +77,45 @@ export function Navbar() {
           </Link>
 
           {/* Navigation and Actions */}
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-4 md:space-x-8">
             {!isAdminPage && (
-              <nav className="hidden md:block">
-                <ul className="flex space-x-8">
-                  {[
-                    { href: "#about", label: t("nav.about") },
-                    { href: "#experience", label: t("nav.experience") },
-                    { href: "#projects", label: t("nav.projects") },
-                    { href: "#contact", label: t("nav.contact") },
-                  ].map((link) => (
-                    <li key={link.href}>
-                      <a
-                        href={link.href}
-                        className="font-medium hover:text-primary transition-colors"
-                        onClick={(e) => {
-                          if (location !== "/") {
-                            return;
-                          }
-                          e.preventDefault();
-                          const target = document.querySelector(link.href);
-                          if (target) {
-                            target.scrollIntoView({ behavior: "smooth" });
-                          }
-                        }}
-                      >
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
+              <>
+                {/* Navigation para Desktop */}
+                <nav className="hidden md:block">
+                  <ul className="flex space-x-8">
+                    {[
+                      { href: "#about", label: t("nav.about") },
+                      { href: "#experience", label: t("nav.experience") },
+                      { href: "#projects", label: t("nav.projects") },
+                      { href: "#contact", label: t("nav.contact") },
+                    ].map((link) => (
+                      <li key={link.href}>
+                        <a
+                          href={link.href}
+                          className="font-medium hover:text-primary transition-colors"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleLinkClick(link.href);
+                          }}
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+                
+                {/* Botão do menu mobile */}
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="md:hidden text-foreground"
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  aria-label="Toggle mobile menu"
+                >
+                  {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                </Button>
+              </>
             )}
 
             {/* Theme Toggle */}
@@ -101,6 +137,36 @@ export function Navbar() {
           </div>
         </div>
       </div>
+      
+      {/* Menu Mobile */}
+      {!isAdminPage && isMobileMenuOpen && (
+        <div 
+          ref={mobileMenuRef}
+          className="md:hidden absolute top-full left-0 w-full bg-white dark:bg-slate-900 shadow-lg overflow-hidden z-50 border-t mobile-menu"
+        >
+          <ul className="p-4 space-y-4">
+            {[
+              { href: "#about", label: t("nav.about") },
+              { href: "#experience", label: t("nav.experience") },
+              { href: "#projects", label: t("nav.projects") },
+              { href: "#contact", label: t("nav.contact") },
+            ].map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-md font-medium transition-colors hover:text-primary"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLinkClick(link.href);
+                  }}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </header>
   );
 }
