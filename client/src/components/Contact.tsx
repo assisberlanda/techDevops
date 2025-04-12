@@ -32,16 +32,6 @@ export function Contact() {
       <div className="container mx-auto px-6">
         <SectionHeading number="4" title={t("contact.title")} />
 
-        <motion.p
-          className="text-lg text-center max-w-2xl mx-auto mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          {t("contact.subtitle")}
-        </motion.p>
-
         <div className="flex justify-center">
           <motion.div
             className="w-full max-w-2xl"
