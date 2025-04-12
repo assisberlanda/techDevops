@@ -30,7 +30,7 @@ export function Contact() {
   return (
     <section id="contact" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
-        <SectionHeading title={t("contact.title")} />
+        <SectionHeading number="4" title={t("contact.title")} />
 
         <div className="flex justify-center">
           <motion.div
