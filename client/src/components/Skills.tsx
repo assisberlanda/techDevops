@@ -71,7 +71,7 @@ export function Skills() {
   return (
     <section id="skills" className="py-20" ref={containerRef}>
       <div className="container mx-auto px-6">
-        <SectionHeading number="02" title={t("skills.title")} />
+        <SectionHeading number="2" title={t("skills.title")} showNumber={true} />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {categories.map((category, index) => (

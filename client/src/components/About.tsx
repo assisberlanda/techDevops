@@ -31,7 +31,7 @@ export function About() {
   return (
     <section id="about" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
-        <SectionHeading number="1" title={t("about.title")} />
+        <SectionHeading number="1" title={t("about.title")} showNumber={true} />
 
         <div className="flex flex-col lg:flex-row gap-12">
           <motion.div

@@ -39,7 +39,7 @@ export function Experience() {
   return (
     <section id="experience" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
-        <SectionHeading number="2" title={t("experience.title")} />
+        <SectionHeading number="2" title={t("experience.title")} showNumber={true} />
 
         <div className="max-w-3xl mx-auto">
           <div className="relative space-y-12 ml-8">

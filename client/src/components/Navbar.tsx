@@ -122,6 +122,7 @@ export function Navbar() {
             <Button
               variant="ghost"
               size="icon"
+              className="theme-toggle-button"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               aria-label="Toggle theme"
             >
