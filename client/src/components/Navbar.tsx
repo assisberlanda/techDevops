@@ -71,7 +71,7 @@ export function Navbar() {
                 className="h-8 sm:h-10 w-auto object-contain"
               />
               <span className="text-xl sm:text-2xl font-bold text-primary dark:text-primary font-mono">
-                DevOps.assis
+                tech.DevOps
               </span>
             </div>
           </Link>

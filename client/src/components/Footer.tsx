@@ -13,7 +13,7 @@ export function Footer() {
           <div className="mb-6 md:mb-0">
             <Link href="/">
               <div className="text-xl font-bold text-primary font-mono">
-                &lt;assis.dev/&gt;
+                &lt;tech.DevOps/&gt;
               </div>
             </Link>
             <p className="mt-2 text-sm text-muted-foreground">
