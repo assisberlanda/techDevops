@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { Mail, Linkedin, Github, MapPin, Award, Loader2 } from "lucide-react";
+import { Mail, Linkedin, Github, Loader2 } from "lucide-react";
 import { useContactContent } from "@/hooks/usePortfolioContent";
 import { useLanguage } from "@/hooks/use-language";
 
@@ -46,80 +46,58 @@ export function Contact() {
               </CardHeader>
 
               <CardContent>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-blue-50 p-3 rounded-full text-blue-700 contact-icon">
+                <div className="grid md:grid-cols-1 gap-6">
+                  <a 
+                    href="mailto:berlanda.medeiros@gmail.com"
+                    className="flex items-start space-x-4 group"
+                    aria-label="Enviar e-mail"
+                  >
+                    <div className="contact-icon">
                       <Mail className="h-5 w-5" />
                     </div>
                     <div>
-                      <h4 className="font-medium mb-1">Email</h4>
-                      <a
-                        href={`mailto:${content.email}`}
-                        className="hover:text-primary transition-colors contact-link"
-                      >
-                        {content.email}
-                      </a>
+                      <h4 className="font-medium mb-1 group-hover:text-primary transition-colors">Email</h4>
+                      <span className="hover:text-primary transition-colors contact-link">
+                        berlanda.medeiros@gmail.com
+                      </span>
                     </div>
-                  </div>
+                  </a>
 
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-blue-50 p-3 rounded-full text-blue-700 contact-icon">
+                  <a 
+                    href="https://www.linkedin.com/in/assismedeiros/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start space-x-4 group"
+                    aria-label="Visitar LinkedIn"
+                  >
+                    <div className="contact-icon">
                       <Linkedin className="h-5 w-5" />
                     </div>
                     <div>
-                      <h4 className="font-medium mb-1">LinkedIn</h4>
-                      <a
-                        href={content.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-primary transition-colors contact-link"
-                      >
+                      <h4 className="font-medium mb-1 group-hover:text-primary transition-colors">LinkedIn</h4>
+                      <span className="hover:text-primary transition-colors contact-link">
                         linkedin.com/in/assismedeiros
-                      </a>
+                      </span>
                     </div>
-                  </div>
+                  </a>
 
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-blue-50 p-3 rounded-full text-blue-700 contact-icon">
+                  <a 
+                    href="http://github.com/assisberlanda/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start space-x-4 group"
+                    aria-label="Visitar GitHub"
+                  >
+                    <div className="contact-icon">
                       <Github className="h-5 w-5" />
                     </div>
                     <div>
-                      <h4 className="font-medium mb-1">GitHub</h4>
-                      <a
-                        href={content.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-primary transition-colors contact-link"
-                      >
+                      <h4 className="font-medium mb-1 group-hover:text-primary transition-colors">GitHub</h4>
+                      <span className="hover:text-primary transition-colors contact-link">
                         github.com/assisberlanda
-                      </a>
+                      </span>
                     </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-blue-50 p-3 rounded-full text-blue-700 contact-icon">
-                      <MapPin className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium mb-1">{t("contact.location")}</h4>
-                      <p>{content.location}</p>
-                      <p className="text-sm text-muted-foreground mt-1">{content.relocate}</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-8 pt-8 border-t flex justify-center">
-                  <div className="flex flex-wrap gap-4">
-                    <a
-                      href={content.dioProfile}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center px-4 py-2 rounded-md transition-colors profile-btn"
-                    >
-                      <Award className="mr-2 h-4 w-4" />
-                      {t("contact.dioProfile")}
-                    </a>
-                  </div>
+                  </a>
                 </div>
               </CardContent>
             </Card>

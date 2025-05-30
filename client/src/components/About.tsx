@@ -90,7 +90,7 @@ export function About() {
               <CardContent className="pt-6 space-y-6">
                 {/* Mindsight */}
                 <div className="flex flex-col md:flex-row gap-4 items-start">
-                  <div className="bg-primary/10 p-4 rounded-md text-primary flex-shrink-0 w-24 h-24 flex items-center justify-center">
+                  <div className="dark:bg-primary/10 bg-blue-100 p-4 rounded-md text-primary flex-shrink-0 w-24 h-24 flex items-center justify-center">
                     {/* Gráfico Mindsight */}
                     <svg width="80" height="80" viewBox="0 0 80 80">
                       <circle cx="40" cy="40" r="38" fill="none" stroke="currentColor" strokeWidth="2" strokeOpacity="0.3" />
@@ -118,7 +118,7 @@ export function About() {
 
                 {/* Gupy */}
                 <div className="flex flex-col md:flex-row gap-4 items-start">
-                  <div className="bg-primary/10 p-4 rounded-md text-primary flex-shrink-0 w-24 h-24 flex items-center justify-center">
+                  <div className="dark:bg-primary/10 bg-blue-100 p-4 rounded-md text-primary flex-shrink-0 w-24 h-24 flex items-center justify-center">
                     {/* Gráfico Gupy */}
                     <svg width="80" height="80" viewBox="0 0 80 80">
                       <rect x="10" y="50" width="12" height="25" fill="currentColor" fillOpacity="0.7" />
@@ -163,18 +163,18 @@ export function About() {
               <CardContent className="pt-6">
                 <div className="space-y-4">
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant="outline" className="bg-primary/5 text-sm py-1.5">DevOps</Badge>
-                    <Badge variant="outline" className="bg-primary/5 text-sm py-1.5">Docker</Badge>
-                    <Badge variant="outline" className="bg-primary/5 text-sm py-1.5">Kubernetes</Badge>
-                    <Badge variant="outline" className="bg-primary/5 text-sm py-1.5">Terraform</Badge>
-                    <Badge variant="outline" className="bg-primary/5 text-sm py-1.5">CI/CD</Badge>
-                    <Badge variant="outline" className="bg-primary/5 text-sm py-1.5">Cloud Computing</Badge>
-                    <Badge variant="outline" className="bg-primary/5 text-sm py-1.5">Desenvolvimento Web</Badge>
-                    <Badge variant="outline" className="bg-primary/5 text-sm py-1.5">Python</Badge>
-                    <Badge variant="outline" className="bg-primary/5 text-sm py-1.5">Automação</Badge>
-                    <Badge variant="outline" className="bg-primary/5 text-sm py-1.5">Azure</Badge>
-                    <Badge variant="outline" className="bg-primary/5 text-sm py-1.5">AWS</Badge>
-                    <Badge variant="outline" className="bg-primary/5 text-sm py-1.5">Linux</Badge>
+                    <Badge variant="outline" className="dark:bg-primary/5 bg-blue-50 text-sm py-1.5">DevOps</Badge>
+                    <Badge variant="outline" className="dark:bg-primary/5 bg-blue-50 text-sm py-1.5">Docker</Badge>
+                    <Badge variant="outline" className="dark:bg-primary/5 bg-blue-50 text-sm py-1.5">Kubernetes</Badge>
+                    <Badge variant="outline" className="dark:bg-primary/5 bg-blue-50 text-sm py-1.5">Terraform</Badge>
+                    <Badge variant="outline" className="dark:bg-primary/5 bg-blue-50 text-sm py-1.5">CI/CD</Badge>
+                    <Badge variant="outline" className="dark:bg-primary/5 bg-blue-50 text-sm py-1.5">Cloud Computing</Badge>
+                    <Badge variant="outline" className="dark:bg-primary/5 bg-blue-50 text-sm py-1.5">Desenvolvimento Web</Badge>
+                    <Badge variant="outline" className="dark:bg-primary/5 bg-blue-50 text-sm py-1.5">Python</Badge>
+                    <Badge variant="outline" className="dark:bg-primary/5 bg-blue-50 text-sm py-1.5">Automação</Badge>
+                    <Badge variant="outline" className="dark:bg-primary/5 bg-blue-50 text-sm py-1.5">Azure</Badge>
+                    <Badge variant="outline" className="dark:bg-primary/5 bg-blue-50 text-sm py-1.5">AWS</Badge>
+                    <Badge variant="outline" className="dark:bg-primary/5 bg-blue-50 text-sm py-1.5">Linux</Badge>
                   </div>
                 </div>
               </CardContent>

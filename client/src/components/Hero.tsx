@@ -1,13 +1,17 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { ArrowDownCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProfilePhoto } from "@/components/ui/profile-photo";
 import { useHeroContent } from "@/hooks/usePortfolioContent";
 import { useLanguage } from "@/hooks/use-language";
+import { useIsMobile } from "@/hooks/use-mobile";
+import badgeImg from "@assets/badge.jpg";
 
 export function Hero() {
   const { data: heroContent, isLoading } = useHeroContent();
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
 
   if (isLoading) {
     return (
@@ -58,11 +62,30 @@ export function Hero() {
           </div>
 
           <motion.div
-            className="lg:w-7/12 text-center lg:text-left order-1 lg:order-2"
+            className="lg:w-7/12 text-center lg:text-left order-1 lg:order-2 relative"
             variants={container}
             initial="hidden"
             animate="show"
           >
+            {!isMobile && (
+              <div className="absolute right-[150px] top-[330px] lg:block">
+                <a 
+                  href="https://www.credly.com/badges/a3a82830-24ec-4da0-8a12-51f3d90e6966" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="transition-transform duration-300 hover:scale-105 block rounded-md overflow-hidden"
+                >
+                  <img 
+                    src={badgeImg} 
+                    alt="Google Cloud Certified" 
+                    width="137" 
+                    height="137"
+                    className="rounded-md"
+                  />
+                </a>
+              </div>
+            )}
+            
             <motion.h1 variants={item} className="text-4xl md:text-5xl xl:text-6xl font-bold mb-4">
               {content.title}
             </motion.h1>
@@ -81,6 +104,25 @@ export function Hero() {
               {t("hero.description")}
             </motion.p>
 
+            {isMobile && (
+              <div className="flex justify-center mb-8">
+                <a 
+                  href="https://www.credly.com/badges/a3a82830-24ec-4da0-8a12-51f3d90e6966" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="transition-transform duration-300 hover:scale-105 block rounded-md overflow-hidden"
+                >
+                  <img 
+                    src={badgeImg} 
+                    alt="Google Cloud Certified" 
+                    width="110" 
+                    height="110"
+                    className="rounded-md"
+                  />
+                </a>
+              </div>
+            )}
+
             <motion.div
               variants={item}
               className="flex justify-center lg:justify-start mt-8 space-x-6"
@@ -89,7 +131,7 @@ export function Hero() {
                 href="https://www.linkedin.com/in/assismedeiros/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-primary/10 hover:bg-primary/20 text-primary p-3 rounded-full transition-colors"
+                className="hero-social-icon"
                 aria-label="LinkedIn"
               >
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -100,7 +142,7 @@ export function Hero() {
                 href="https://github.com/assisberlanda"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-primary/10 hover:bg-primary/20 text-primary p-3 rounded-full transition-colors"
+                className="hero-social-icon"
                 aria-label="GitHub"
               >
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -109,7 +151,7 @@ export function Hero() {
               </a>
               <a
                 href="#contact"
-                className="bg-primary/10 hover:bg-primary/20 text-primary p-3 rounded-full transition-colors"
+                className="hero-social-icon"
                 aria-label="Contact"
               >
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">

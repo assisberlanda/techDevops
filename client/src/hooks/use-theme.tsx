@@ -16,7 +16,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({
   children,
-  defaultTheme = "system",
+  defaultTheme = "dark",
 }: ThemeProviderProps) {
   const [theme, setThemeState] = useState<Theme>(
     () => (localStorage.getItem("theme") as Theme) || defaultTheme
@@ -27,13 +27,10 @@ export function ThemeProvider({
     
     root.classList.remove("light", "dark");
     
+    // No modo "system", sempre preferir o tema escuro
+    // independentemente das configurações do sistema
     if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
-      
-      root.classList.add(systemTheme);
+      root.classList.add("dark");
       return;
     }
     

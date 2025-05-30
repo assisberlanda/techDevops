@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Mail, Linkedin, Github, Award } from "lucide-react";
 import { useLanguage } from "@/hooks/use-language";
+import { FooterLegal } from "@/components/FooterLegal";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -27,7 +28,7 @@ export function Footer() {
                 href="https://www.linkedin.com/in/assismedeiros/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xl hover:text-primary transition-colors footer-icon"
+                className="footer-social-icon"
                 aria-label="LinkedIn"
               >
                 <Linkedin />
@@ -36,14 +37,14 @@ export function Footer() {
                 href="https://github.com/assisberlanda"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xl hover:text-primary transition-colors footer-icon"
+                className="footer-social-icon"
                 aria-label="GitHub"
               >
                 <Github />
               </a>
               <a
                 href="mailto:berlanda.medeiros@gmail.com"
-                className="text-xl hover:text-primary transition-colors footer-icon"
+                className="footer-social-icon"
                 aria-label="Email"
               >
                 <Mail />
@@ -52,7 +53,7 @@ export function Footer() {
                 href="https://www.dio.me/users/dydhio_34628"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xl hover:text-primary transition-colors footer-icon"
+                className="footer-social-icon"
                 aria-label="DIO Profile"
               >
                 <Award />
@@ -65,15 +66,7 @@ export function Footer() {
           <p>
             {t("footer.builtWith")} <span className="text-primary">❤</span> {t("footer.stack")}
           </p>
-          <p className="mt-2">
-            <span className="hover:text-primary transition-colors">
-              {t("footer.terms")}
-            </span>{" "}
-            |{" "}
-            <span className="hover:text-primary transition-colors ml-2">
-              {t("footer.privacy")}
-            </span>
-          </p>
+          <FooterLegal />
         </div>
       </div>
     </footer>

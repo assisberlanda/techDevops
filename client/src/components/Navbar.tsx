@@ -37,11 +37,18 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   
+  // Função para fechar o menu mobile
+  const closeMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   // Fechar o menu mobile quando clicar fora dele
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
-        setIsMobileMenuOpen(false);
+      if (mobileMenuRef.current && 
+          !mobileMenuRef.current.contains(event.target as Node) && 
+          !(event.target as Element).closest('.mobile-menu-button')) {
+        closeMenu();
       }
     };
     
@@ -66,9 +73,9 @@ export function Navbar() {
           <Link href="/">
             <div className="flex items-center gap-2">
               <img
-                src="/devops.webp"
+                src={theme === "dark" ? "/devops_dark.webp" : "/devops_light.webp"}
                 alt="DevOps Logo"
-                className="h-8 sm:h-10 w-auto object-contain"
+                className="h-8 sm:h-10 w-auto object-contain transition-all duration-300"
               />
               <span className="text-xl sm:text-2xl font-bold text-primary dark:text-primary font-mono">
                 tech.DevOps
@@ -92,7 +99,7 @@ export function Navbar() {
                       <li key={link.href}>
                         <a
                           href={link.href}
-                          className="font-medium text-primary hover:text-blue-700 dark:text-emerald-300 dark:hover:text-emerald-400 transition-colors"
+                          className="font-medium text-primary hover:text-white hover:bg-blue-700 dark:text-emerald-300 dark:hover:text-slate-900 dark:hover:bg-emerald-300 px-3 py-1 rounded-md transition-all"
                           onClick={(e) => {
                             e.preventDefault();
                             handleLinkClick(link.href);
@@ -109,11 +116,11 @@ export function Navbar() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="md:hidden text-foreground mobile-menu-button"
-                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  className="md:hidden mobile-menu-button"
+                  onClick={() => isMobileMenuOpen ? closeMenu() : setIsMobileMenuOpen(true)}
                   aria-label="Toggle mobile menu"
                 >
-                  {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                  {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
                 </Button>
               </>
             )}
@@ -155,7 +162,7 @@ export function Navbar() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="block py-2 px-4 hover:bg-blue-50 dark:hover:bg-slate-800 rounded-md font-medium transition-colors text-blue-700 dark:text-emerald-300"
+                  className="block py-2 px-4 rounded-md font-medium transition-all text-blue-700 dark:text-emerald-300 hover:text-white hover:bg-blue-700 dark:hover:text-slate-900 dark:hover:bg-emerald-300 hover:shadow-md"
                   onClick={(e) => {
                     e.preventDefault();
                     handleLinkClick(link.href);

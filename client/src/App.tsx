@@ -22,7 +22,7 @@ function Router() {
 
 function App() {
   return (
-    <ThemeProvider>
+    <ThemeProvider defaultTheme="dark">
       <LanguageProvider>
         <QueryClientProvider client={queryClient}>
           <Navbar />
