@@ -27,7 +27,7 @@ export default defineConfig({
   },
   root: path.resolve(import.meta.dirname, "client"),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    outDir: path.resolve(import.meta.dirname, "docs"), // mudado "dist/public" para "docs" por causa do deploy do pages do GitHub.
     emptyOutDir: true,
   },
 });
