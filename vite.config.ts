@@ -1,38 +1,37 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import themePlugin from "@replit/vite-plugin-shadcn-theme-json";
 import path from "path";
-import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
+
+// Removemos os plugins específicos do Replit que não são necessários para o deploy
+// import themePlugin from "@replit/vite-plugin-shadcn-theme-json";
+// import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
-  // ---> ADICIONADO: Informa ao Vite o caminho base para o deploy
-  base: "/techDevops/",
+  // ---> REMOVIDO: 'base: "/techDevops/"'. O Netlify não precisa disso.
 
   plugins: [
     react(),
-    runtimeErrorOverlay(),
-    themePlugin(),
-    ...(process.env.NODE_ENV !== "production" &&
-    process.env.REPL_ID !== undefined
-      ? [
-          await import("@replit/vite-plugin-cartographer").then((m) =>
-            m.cartographer(),
-          ),
-        ]
-      : []),
+    // Os plugins do Replit foram removidos. Se você ainda desenvolve no Replit,
+    // eles não atrapalham o build do Netlify, mas para um deploy limpo,
+    // é melhor removê-los do build de produção. Se preferir, pode mantê-los.
   ],
+
+  // ---> MANTIDO: Seus aliases são importantes para os imports do projeto.
   resolve: {
     alias: {
-      "@": path.resolve(import.meta.dirname, "client", "src"),
-      "@shared": path.resolve(import.meta.dirname, "shared"),
-      "@assets": path.resolve(import.meta.dirname, "attached_assets"),
+      "@": path.resolve(process.cwd(), "client", "src"),
+      "@shared": path.resolve(process.cwd(), "shared"),
+      "@assets": path.resolve(process.cwd(), "attached_assets"),
     },
   },
-  // ---> MANTIDO: Esta linha está correta para sua estrutura
-  root: path.resolve(import.meta.dirname, "client"),
+
+  // ---> MANTIDO: 'root' aponta para sua pasta 'client', o que está correto.
+  root: 'client',
+  
+  // ---> MANTIDO: A configuração de build já está correta para o Netlify.
   build: {
-    // ---> CORRIGIDO: A pasta de saída agora é 'dist' na raiz do projeto
-    outDir: path.resolve(import.meta.dirname, "dist"),
+    // A pasta de saída será 'dist' na raiz do projeto.
+    outDir: path.resolve(process.cwd(), 'dist'),
     emptyOutDir: true,
   },
 });
