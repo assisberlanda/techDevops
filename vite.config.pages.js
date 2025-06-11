@@ -6,13 +6,15 @@ import path from "path";
 export default defineConfig({
   plugins: [
     react(),
-    // Removi plugins específicos do Replit/desenvolvimento que não são necessários para o build estático
   ],
   // Define o caminho base para o subdiretório do GitHub Pages
   base: "/techDevops/",
 
   // Aponta para a raiz do código do frontend
   root: path.resolve(import.meta.dirname, "client"),
+
+  // **ADIÇÃO CRUCIAL: Força o Vite a usar a pasta `public` dentro de `client`**
+  publicDir: path.resolve(import.meta.dirname, "client", "public"),
 
   resolve: {
     // Mantém os mesmos aliases para que os imports funcionem
