@@ -147,20 +147,40 @@ export class MemStorage implements IStorage {
     this.projectsList = [
       {
         id: 1,
-        title: "Docker Compose Collection",
-        description: "Uma coleção de arquivos Docker Compose para configurar rapidamente ambientes de desenvolvimento e aplicações comuns.",
-        tags: ["Docker", "Docker Compose", "DevOps"],
+        title: "Sou-Solidario",
+        description: "O Sou Solidário não é apenas um projeto de hackathon; é uma solução escalável, com um propósito social forte e a tecnologia para fazer a diferença. Convidamos você a se juntar a nós nesta jornada para construir um futuro mais justo, conectado e solidário.",
+        tags: ["TypeScript", "Hackathon", "WebApp"],
         repoUrl: "https://github.com/assisberlanda",
         demoUrl: "",
         isVisible: true,
         isFeatured: true
       },
       {
+        id: 1,
+        title: "intuitiveCare - Teste de Nivelamento",
+        description: "Esse foi um projeto para um Teste de Nivelamento da empresa IntuitiveCare, onde desenvolvi uma aplicação web simples para consultas.",
+        tags: ["Python", "JavaScript", "Vue"],
+        repoUrl: "https://github.com/assisberlanda/intuitiveCare",
+        demoUrl: "",
+        isVisible: true,
+        isFeatured: true
+      },
+      {
+        id: 1,
+        title: "Docker Compose e Microservicos",
+        description: "Uma cole\xE7\xE3o de arquivos Docker Compose para configurar rapidamente ambientes de desenvolvimento e utilização prática no cenário de Microsserviços..",
+        tags: ["Docker", "Docker Compose", "DevOps"],
+        repoUrl: "https://github.com/assisberlanda/Docker-Microservicos",
+        demoUrl: "",
+        isVisible: true,
+        isFeatured: true
+      },
+      {
         id: 2,
-        title: "Kubernetes Deployment Templates",
-        description: "Templates para implantação de aplicações em clusters Kubernetes, incluindo serviços, deployments e configurações de rede.",
-        tags: ["Kubernetes", "YAML", "DevOps"],
-        repoUrl: "https://github.com/assisberlanda",
+        title: "Kubernetes Deployment",
+        description: "Implanta\xE7\xE3o de aplica\xE7\xF5es em clusters Kubernetes, incluindo servi\xE7os, deployments de aplicação com Docker e Kubernetes - GCP.",
+        tags: ["Kubernetes", "Dockerfile", "DevOps"],
+        repoUrl: "https://github.com/assisberlanda/gitlhub-cicd-app-base",
         demoUrl: "",
         isVisible: true,
         isFeatured: true
@@ -168,29 +188,29 @@ export class MemStorage implements IStorage {
       {
         id: 3,
         title: "Terraform Azure Modules",
-        description: "Coleção de módulos Terraform para provisionamento de infraestrutura na Azure, incluindo VMs, redes e serviços gerenciados.",
+        description: "Cole\xE7\xE3o de m\xF3dulos Terraform para provisionamento de infraestrutura na Azure, incluindo VMs, redes e servi\xE7os gerenciados.",
         tags: ["Terraform", "Azure", "IaC"],
-        repoUrl: "https://github.com/assisberlanda",
+        repoUrl: "https://github.com/assisberlanda/pipeline-github-actions-v1",
         demoUrl: "",
         isVisible: true,
         isFeatured: true
       },
       {
         id: 4,
-        title: "Python API Testing Framework",
-        description: "Framework para automação de testes de APIs RESTful usando Python, com geração de relatórios e integração com CI/CD.",
+        title: "CI/CD com Postman e Newman - serverRestAPI",
+        description: "Criação de testes de API utilizando postman, newman e newman-htmlextra",
         tags: ["Python", "API Testing", "Automation"],
-        repoUrl: "https://github.com/assisberlanda",
+        repoUrl: "https://github.com/assisberlanda/serverRestAPI",
         demoUrl: "",
         isVisible: true,
         isFeatured: true
       },
       {
         id: 5,
-        title: "CI/CD Pipeline Templates",
-        description: "Templates para pipelines de CI/CD usando GitHub Actions, com foco em aplicações containerizadas e infraestrutura como código.",
+        title: "Dashboard Estimador Codex",
+        description: "Calculadora que estima o custo de uso da API da OpenAI com base nos tokens",
         tags: ["GitHub Actions", "CI/CD", "YAML"],
-        repoUrl: "https://github.com/assisberlanda",
+        repoUrl: "https://github.com/assisberlanda/codex_estimator_dashboard",
         demoUrl: "",
         isVisible: true,
         isFeatured: true
@@ -198,7 +218,7 @@ export class MemStorage implements IStorage {
       {
         id: 6,
         title: "Portfolio Pessoal",
-        description: "Site de portfólio pessoal desenvolvido com React, Tailwind CSS e API do GitHub, com design responsivo e integração com APIs de terceiros.",
+        description: "Site de portf\xF3lio pessoal desenvolvido com React, Tailwind CSS e API do GitHub, com design responsivo e integra\xE7\xE3o com APIs de terceiros.",
         tags: ["React", "Tailwind CSS", "GitHub API"],
         repoUrl: "https://github.com/assisberlanda",
         demoUrl: "",
