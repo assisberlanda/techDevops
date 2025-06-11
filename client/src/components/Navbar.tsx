@@ -73,7 +73,7 @@ export function Navbar() {
           <Link href="/">
             <div className="flex items-center gap-2">
               <img
-                src={theme === "dark" ? "/devops_dark.webp" : "/devops_light.webp"}
+                src={theme === "dark" ? "/images/devops_dark.webp" : "/images/devops_light.webp"}
                 alt="DevOps Logo"
                 className="h-8 sm:h-10 w-auto object-contain transition-all duration-300"
               />

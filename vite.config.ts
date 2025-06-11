@@ -5,6 +5,9 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
+  // ---> ADICIONADO: Informa ao Vite o caminho base para o deploy
+  base: "/techDevops/",
+
   plugins: [
     react(),
     runtimeErrorOverlay(),
@@ -25,9 +28,11 @@ export default defineConfig({
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
+  // ---> MANTIDO: Esta linha está correta para sua estrutura
   root: path.resolve(import.meta.dirname, "client"),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    // ---> CORRIGIDO: A pasta de saída agora é 'dist' na raiz do projeto
+    outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
   },
 });
