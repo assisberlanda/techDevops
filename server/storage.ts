@@ -98,7 +98,7 @@ export class MemStorage implements IStorage {
         title: "Sou-Solidario",
         description: "O Sou Solidário não é apenas um projeto de hackathon; é uma solução escalável, com um propósito social forte e a tecnologia para fazer a diferença. Convidamos você a se juntar a nós nesta jornada para construir um futuro mais justo, conectado e solidário.",
         tags: ["TypeScript", "Hackathon", "WebApp"],
-        repoUrl: "https://github.com/assisberlanda",
+        repoUrl: "https://github.com/assisberlanda/Sou-Solidario",
         demoUrl: "",
         isVisible: true,
         isFeatured: true
