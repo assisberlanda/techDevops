@@ -1,6 +1,5 @@
-// netlify/functions/api.js
 const serverless = require('serverless-http');
-const appPromise = require('../../dist/index.js').default; // Aponta para a API compilada
+const appPromise = require('../../dist/api.js').default;
 
 exports.handler = async (event, context) => {
   const app = await appPromise;
