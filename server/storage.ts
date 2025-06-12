@@ -156,7 +156,7 @@ export class MemStorage implements IStorage {
         isFeatured: true
       },
       {
-        id: 1,
+        id: 2,
         title: "intuitiveCare - Teste de Nivelamento",
         description: "Esse foi um projeto para um Teste de Nivelamento da empresa IntuitiveCare, onde desenvolvi uma aplicação web simples para consultas.",
         tags: ["Python", "JavaScript", "Vue"],
@@ -166,7 +166,7 @@ export class MemStorage implements IStorage {
         isFeatured: true
       },
       {
-        id: 1,
+        id: 3,
         title: "Docker Compose e Microservicos",
         description: "Uma cole\xE7\xE3o de arquivos Docker Compose para configurar rapidamente ambientes de desenvolvimento e utilização prática no cenário de Microsserviços..",
         tags: ["Docker", "Docker Compose", "DevOps"],
@@ -176,7 +176,7 @@ export class MemStorage implements IStorage {
         isFeatured: true
       },
       {
-        id: 2,
+        id: 4,
         title: "Kubernetes Deployment",
         description: "Implanta\xE7\xE3o de aplica\xE7\xF5es em clusters Kubernetes, incluindo servi\xE7os, deployments de aplicação com Docker e Kubernetes - GCP.",
         tags: ["Kubernetes", "Dockerfile", "DevOps"],
@@ -186,7 +186,7 @@ export class MemStorage implements IStorage {
         isFeatured: true
       },
       {
-        id: 3,
+        id: 5,
         title: "Terraform Azure Modules",
         description: "Cole\xE7\xE3o de m\xF3dulos Terraform para provisionamento de infraestrutura na Azure, incluindo VMs, redes e servi\xE7os gerenciados.",
         tags: ["Terraform", "Azure", "IaC"],
@@ -196,7 +196,7 @@ export class MemStorage implements IStorage {
         isFeatured: true
       },
       {
-        id: 4,
+        id: 6,
         title: "CI/CD com Postman e Newman - serverRestAPI",
         description: "Criação de testes de API utilizando postman, newman e newman-htmlextra",
         tags: ["Python", "API Testing", "Automation"],
@@ -206,7 +206,7 @@ export class MemStorage implements IStorage {
         isFeatured: true
       },
       {
-        id: 5,
+        id: 7,
         title: "Dashboard Estimador Codex",
         description: "Calculadora que estima o custo de uso da API da OpenAI com base nos tokens",
         tags: ["GitHub Actions", "CI/CD", "YAML"],
@@ -216,7 +216,7 @@ export class MemStorage implements IStorage {
         isFeatured: true
       },
       {
-        id: 6,
+        id: 8,
         title: "Portfolio Pessoal",
         description: "Site de portf\xF3lio pessoal desenvolvido com React, Tailwind CSS e API do GitHub, com design responsivo e integra\xE7\xE3o com APIs de terceiros.",
         tags: ["React", "Tailwind CSS", "GitHub API"],
