@@ -5,10 +5,12 @@
 
 # Configuração específica para a função 'api'
 [functions."api"]
-  # Use o bundler 'zisi' para lidar com dependências complexas como Express/Vite
   node_bundler = "zisi"
+  # ---> ADIÇÃO CRUCIAL AQUI <---
+  # Inclui a pasta 'shared' e todo o seu conteúdo no deploy da função.
+  included_files = ["shared/**"]
 
-# Redirecionamento para chamadas à API
+# Regra de redirecionamento para a API
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/api/:splat"
