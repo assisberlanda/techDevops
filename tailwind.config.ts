@@ -1,8 +1,17 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  darkMode: ["class"],
-  content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
+  // ---> CORREÇÃO PRINCIPAL AQUI <---
+  // Usando a string 'class' em vez do array ['class'].
+  // Isso é mais comum e garante que o Tailwind use a estratégia de classe.
+  darkMode: "class",
+
+  content: [
+    "./client/index.html",
+    // ---> GARANTINDO QUE TODOS OS ARQUIVOS RELEVANTES SEJAM ESCANEADOS <---
+    "./client/src/**/*.{js,ts,jsx,tsx}",
+    "./server/storage.ts", // Adicionado para escanear os caminhos de imagem no storage
+  ],
   theme: {
     extend: {
       borderRadius: {
