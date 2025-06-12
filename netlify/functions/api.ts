@@ -1,8 +1,7 @@
 import serverless from 'serverless-http';
-import appPromise from '../../server/index.ts'; // Importa a promessa do nosso servidor com o caminho explícito
+import appPromise from '../../server/index'; // Removido `.ts` que não é necessário na importação
 
-// Exporta o handler que o Netlify vai usar
 export const handler = async (event: any, context: any) => {
-  const app = await appPromise; // Espera a configuração do app ser concluída
+  const app = await appPromise;
   return serverless(app)(event, context);
 };
