@@ -5,12 +5,10 @@
 
 # Configuração específica para a função 'api'
 [functions."api"]
-  # Diz ao Netlify para não usar seu empacotador esbuild padrão
-  # e sim usar um empacotador mais robusto (zip-it-and-ship-it)
-  # que lida melhor com dependências complexas como as do Express/Vite.
+  # Use o bundler 'zisi' para lidar com dependências complexas como Express/Vite
   node_bundler = "zisi"
 
-# Regra de redirecionamento para a API
+# Redirecionamento para chamadas à API
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/api/:splat"
