@@ -6,6 +6,10 @@ import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { useLanguage } from "@/hooks/use-language";
 
+// ---> CORREÇÃO: Importar as imagens como módulos
+import devopsDarkLogo from "@assets/devops_dark.webp";
+import devopsLightLogo from "@assets/devops_light.webp";
+
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -57,8 +61,9 @@ export function Navbar() {
         <div className="flex justify-between items-center">
           <Link href="/">
             <a className="flex items-center gap-2 cursor-pointer">
+              {/* ---> CORREÇÃO: Usar as imagens importadas */}
               <img
-                src={theme === "dark" ? "/devops_dark.webp" : "/devops_light.webp"}
+                src={theme === "dark" ? devopsDarkLogo : devopsLightLogo}
                 alt="DevOps Logo"
                 className="h-8 sm:h-10 w-auto object-contain transition-all duration-300"
               />
