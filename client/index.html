@@ -7,18 +7,25 @@
     <link rel="icon" href="/favicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     
-    <!-- Script para definir o tema antes do React carregar -->
+    <!-- SCRIPT DE TEMA REFORÇADO -->
     <script>
       (function() {
-        // A chave aqui DEVE ser a mesma do ThemeProvider em main.tsx
-        const theme = localStorage.getItem('ui-theme') || 'dark'; 
-        const root = document.documentElement;
+        const storageKey = 'ui-theme';
+        const defaultTheme = 'dark';
+        let theme;
+        try {
+          theme = localStorage.getItem(storageKey);
+        } catch (e) {
+          // Ignora erros de acesso ao localStorage
+        }
         
-        // Remove classes para garantir um estado limpo
-        root.classList.remove('light', 'dark');
-
-        // Adiciona a classe correta
-        root.classList.add(theme);
+        const root = document.documentElement;
+        // Aplica o tema salvo ou o padrão ('dark')
+        if (theme === 'light') {
+          root.classList.add('light');
+        } else {
+          root.classList.add('dark');
+        }
       })();
     </script>
   </head>

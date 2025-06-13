@@ -3,13 +3,13 @@ import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useTheme } from "@/components/theme-provider"; // <-- Confirme esta importação
+import { useTheme } from "@/components/theme-provider";
 import { useLanguage } from "@/hooks/use-language";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme(); // <-- Hook correto
+  const { theme, setTheme } = useTheme();
   const { t } = useLanguage();
   const [location, navigate] = useLocation();
   const mobileMenuRef = useRef<HTMLDivElement>(null);
