@@ -2,29 +2,10 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>techDevops</title>
     <link rel="icon" href="/favicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-    <!-- Script para forçar o modo escuro ANTES de qualquer renderização -->
-    <script>
-      // Este script bloqueia a renderização para garantir que não haja flash branco.
-      (function() {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      })();
-    </script>
-
-    <!-- Estilo crítico para definir o fundo escuro imediatamente -->
-    <style>
-      body {
-        /* Use a cor de fundo escura exata do seu tema Tailwind */
-        /* Geralmente é algo como slate-900 ou gray-900. Ajuste se necessário. */
-        background-color: #0f172a; /* Cor para slate-900 */
-      }
-    </style>
-
   </head>
   <body>
     <div id="root"></div>

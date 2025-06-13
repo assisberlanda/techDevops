@@ -1,19 +1,16 @@
-import React from 'react';
-import { createRoot } from "react-dom/client";
-import App from "./App";
-import "./index.css";
-import { ThemeProvider } from "./hooks/use-theme.tsx"; // Importe o ThemeProvider
+// Caminho: client/src/main.tsx
 
-const rootElement = document.getElementById("root");
-if (!rootElement) throw new Error('Failed to find the root element');
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.tsx'
+import './index.css'
+// Importa o ThemeProvider do local correto
+import { ThemeProvider } from './components/theme-provider.tsx'
 
-const root = createRoot(rootElement);
-
-root.render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    {/* Envolva seu App com o ThemeProvider */}
-    <ThemeProvider storageKey="theme" defaultTheme="dark">
+    <ThemeProvider defaultTheme="dark" storageKey="ui-theme">
       <App />
     </ThemeProvider>
-  </React.StrictMode>
-);
+  </React.StrictMode>,
+)
