@@ -1,4 +1,5 @@
-import { Switch, Route, Router as WouterRouter } from "wouter";
+import { Switch, Route, Router } from "wouter";
+import { useHashLocation } from "wouter/use-hash-location"; // <-- CORREÇÃO: Importação nomeada
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
@@ -10,14 +11,11 @@ import TermsOfUse from "@/pages/TermsOfUse";
 import { Navbar } from "@/components/Navbar";
 import { BackToTop } from "@/components/BackToTop";
 import { LanguageProvider } from "@/hooks/use-language";
-import hashLocationHook from 'wouter/use-hash-location';
-
-// ---> REMOVIDO: A importação do ThemeProvider daqui.
-// import { ThemeProvider } from "@/hooks/use-theme";
 
 function AppRouter() {
   return (
-    <WouterRouter hook={hashLocationHook}>
+    // ---> CORREÇÃO: Usar o hook aqui para navegação baseada em hash
+    <Router hook={useHashLocation}>
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/admin" component={Admin} />
@@ -25,13 +23,12 @@ function AppRouter() {
         <Route path="/terms-of-use" component={TermsOfUse} />
         <Route component={NotFound} />
       </Switch>
-    </WouterRouter>
+    </Router>
   );
 }
 
 function App() {
   return (
-    // ---> REMOVIDO: O ThemeProvider que estava aqui.
     <LanguageProvider>
       <QueryClientProvider client={queryClient}>
         <Navbar />
@@ -40,7 +37,6 @@ function App() {
         <Toaster />
       </QueryClientProvider>
     </LanguageProvider>
-    // ---> REMOVIDO: O ThemeProvider que estava aqui.
   );
 }
 
