@@ -1,16 +1,9 @@
+# Configuração para Netlify
 [build]
-  command = "npm run build"
+  command = "npm run build:netlify"
   publish = "dist"
   functions = "netlify/functions"
 
-# Configuração específica para a função 'api'
-[functions."api"]
-  node_bundler = "zisi"
-  # ---> ADIÇÃO CRUCIAL AQUI <---
-  # Inclui a pasta 'shared' e todo o seu conteúdo no deploy da função.
-  included_files = ["shared/**"]
-
-# Regra de redirecionamento para a API
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/api/:splat"
