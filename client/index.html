@@ -6,6 +6,19 @@
     <title>techDevops</title>
     <link rel="icon" href="/favicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- ADIÇÃO CRUCIAL AQUI -->
+    <script>
+      (function() {
+        const theme = localStorage.getItem('ui-theme') || 'dark';
+        const root = document.documentElement;
+        if (theme === 'dark') {
+          root.classList.add('dark');
+        } else {
+          root.classList.remove('dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
