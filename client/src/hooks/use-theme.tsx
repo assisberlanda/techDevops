@@ -1,10 +1,11 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-type Theme = "dark" | "light" | "system";
+type Theme = "dark" | "light";
 
 interface ThemeProviderProps {
   children: React.ReactNode;
   defaultTheme?: Theme;
+  storageKey?: string;
 }
 
 interface ThemeContextType {
@@ -17,29 +18,41 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export function ThemeProvider({
   children,
   defaultTheme = "dark",
+  storageKey = "theme",
 }: ThemeProviderProps) {
-  const [theme, setThemeState] = useState<Theme>(
-    () => (localStorage.getItem("theme") as Theme) || defaultTheme
-  );
+  const [theme, setThemeState] = useState<Theme>(() => {
+    try {
+      const storedTheme = window.localStorage.getItem(storageKey) as Theme;
+      if (storedTheme === 'light' || storedTheme === 'dark') {
+        return storedTheme;
+      }
+    } catch (e) {
+      console.warn("Failed to read theme from localStorage", e);
+    }
+    return defaultTheme;
+  });
 
   useEffect(() => {
     const root = window.document.documentElement;
-    
-    root.classList.remove("light", "dark");
-    
-    // No modo "system", sempre preferir o tema escuro
-    // independentemente das configurações do sistema
-    if (theme === "system") {
-      root.classList.add("dark");
-      return;
+
+    // Lógica corrigida: nunca remove a classe antes de saber qual adicionar.
+    if (theme === 'dark') {
+      root.classList.add('dark');
+      root.classList.remove('light');
+    } else {
+      root.classList.add('light');
+      root.classList.remove('dark');
     }
-    
-    root.classList.add(theme);
-  }, [theme]);
+
+    try {
+      localStorage.setItem(storageKey, theme);
+    } catch (e) {
+      console.warn("Failed to set theme in localStorage", e);
+    }
+  }, [theme, storageKey]);
   
-  const setTheme = (theme: Theme) => {
-    localStorage.setItem("theme", theme);
-    setThemeState(theme);
+  const setTheme = (newTheme: Theme) => {
+    setThemeState(newTheme);
   };
 
   return (
