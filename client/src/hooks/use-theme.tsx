@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState, useMemo } from "react";
 
 type Theme = "dark" | "light";
 
@@ -22,7 +22,7 @@ export function ThemeProvider({
 }: ThemeProviderProps) {
   const [theme, setThemeState] = useState<Theme>(() => {
     try {
-      const storedTheme = window.localStorage.getItem(storageKey) as Theme;
+      const storedTheme = window.localStorage.getItem(storageKey);
       if (storedTheme === 'light' || storedTheme === 'dark') {
         return storedTheme;
       }
@@ -35,7 +35,6 @@ export function ThemeProvider({
   useEffect(() => {
     const root = window.document.documentElement;
 
-    // Lógica corrigida: nunca remove a classe antes de saber qual adicionar.
     if (theme === 'dark') {
       root.classList.add('dark');
       root.classList.remove('light');
@@ -55,8 +54,10 @@ export function ThemeProvider({
     setThemeState(newTheme);
   };
 
+  const contextValue = useMemo(() => ({ theme, setTheme }), [theme]);
+
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={contextValue}>
       {children}
     </ThemeContext.Provider>
   );
